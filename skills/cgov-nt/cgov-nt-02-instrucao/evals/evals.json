@@ -1,0 +1,27 @@
+{
+  "skill_name": "cgov-nt-02-instrucao",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Já rodei a triagem (NT_ESTADO.md existe, Tipo B). Aqui está a planilha da nossa consulta interna. Faça a instrução técnica: preciso do perfil da amostra e da tabulação das duas perguntas fechadas sobre teletrabalho.",
+      "expected_output": "Quadro de Achados com tabela de perfil da amostra (Unidade de Exercício, Tempo de Instituição) e tabela de frequências para as duas perguntas fechadas, com percentuais calculados exatamente a partir do CSV fornecido — sem inventar números.",
+      "files": ["evals/files/amostra_sintetica_consulta.csv"],
+      "expectations": [
+        "As frequências reportadas para 'Unidade de Exercício' batem exatamente com a contagem real do CSV (Sede=4, UC/NGI=3, Gerência Regional=2, Centro de Pesquisa=1)",
+        "A tabulação da pergunta sobre o Art. 19 (teletrabalho) reflete as 10 respostas do arquivo, sem arredondamento que mude a moda",
+        "A saída não inclui nenhum dado pessoal identificável além das colunas fornecidas",
+        "A saída é entregue em Markdown, sem gerar arquivo .docx"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A triagem indicou Tipo A (auditoria de minuta normativa) e não há dados brutos de consulta — só uma minuta de portaria para diagnosticar. Você pode rodar a instrução técnica mesmo assim?",
+      "expected_output": "A skill reconhece que o insumo é puramente normativo e não deve duplicar esse trabalho; orienta o uso de cgov-comparar-versoes, cgov-modelar-fluxo ou cgov-auditoria-competencias em vez de prosseguir com tabulação de dados.",
+      "expectations": [
+        "A skill não tenta tabular a minuta como se fosse dado quantitativo/qualitativo",
+        "A skill redireciona explicitamente para as skills analíticas normativas apropriadas",
+        "A skill não gera uma tabela vazia ou fictícia apenas para produzir uma saída"
+      ]
+    }
+  ]
+}

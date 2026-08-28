@@ -1,0 +1,26 @@
+{
+  "skill_name": "cgov-nt-07-conclusao",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Todos os capítulos anteriores aplicáveis (introdução, diagnóstico, propostas e quesitos PFE) estão concluídos em NT_ESTADO.md, com 8 achados (3 Urgentes, 4 Prioritários, 1 Desejável). Redija o Capítulo 5.",
+      "expected_output": "Síntese diagnóstica quantificada usando exatamente 8/3/4/1, conclusão técnica assertiva, proposição em algarismos romanos minúsculos entre parênteses, encaminhamentos em lista com destinatário em negrito, e bloco de assinaturas sem matrícula SIAPE.",
+      "expectations": [
+        "A síntese diagnóstica cita os números exatos 8 achados, 3 Urgentes, 4 Prioritários e 1 Desejável",
+        "A proposição usa algarismos romanos minúsculos entre parênteses — (i), (ii), (iii)",
+        "Os encaminhamentos são uma lista com o nome do destinatário em negrito, não algarismos romanos maiúsculos",
+        "O bloco de assinaturas não contém matrícula SIAPE",
+        "A conclusão técnica toma posição clara (não fica em cima do muro)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "cgov-nt-05 (propostas) ainda não foi executada, mas o usuário pede direto para fechar a NT com a conclusão.",
+      "expected_output": "A skill interrompe e lista o que está pendente antes de redigir a conclusão, já que o roteiro definido em NT_ESTADO.md marcava cgov-nt-05 como necessária.",
+      "expectations": [
+        "A skill não redige a Seção 5 sem os capítulos pré-requisito aplicáveis concluídos",
+        "A skill lista explicitamente o que falta (cgov-nt-05) antes de prosseguir"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "a diretoria quer editar uma nova portaria pra regulamentar o uso de drones dentro das UCs, alguém falou que precisa fazer uma AIR antes, isso é obrigatório?",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso saber se dá pra dispensar a AIR nessa instrução normativa que só organiza um processo interno nosso, sem efeito pra fora do ICMBio",
+    "should_trigger": true
+  },
+  {
+    "query": "a portaria de licenciamento simplificado que editamos em 2019 não tá funcionando direito, parece que aumentou a judicialização em vez de diminuir, isso seria motivo pra fazer uma ARR?",
+    "should_trigger": true
+  },
+  {
+    "query": "cara, preciso montar a árvore de causas do problema regulatório antes de escrever a AIR, mas o pessoal só me manda sintoma tipo 'processo demorado', não causa raiz",
+    "should_trigger": true
+  },
+  {
+    "query": "quais alternativas eu tenho que considerar além de simplesmente criar uma IN nova pra resolver esse problema de sobreposição de competência entre duas coordenações?",
+    "should_trigger": true
+  },
+  {
+    "query": "o decreto 10.411 exige análise de impacto sobre quem vai ser afetado pela nova norma, quem seriam essas partes no caso de uma resolução sobre pesca em UC de uso sustentável?",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-air-arr me ajuda a montar o relatório de AIR da minuta de resolução sobre concessão de uso público",
+    "should_trigger": true
+  },
+  {
+    "query": "queria avaliar se essa portaria de 2015 sobre autorização de pesquisa ainda tá cumprindo o objetivo dela ou se já era pra ter sido revista",
+    "should_trigger": true
+  },
+  {
+    "query": "AIR_ARR - preciso de uma nota de dispensa porque essa portaria só organiza processo interno da CGOV mesmo, sem afetar ninguém de fora",
+    "should_trigger": true
+  },
+  {
+    "query": "o pessoal jurídico perguntou qual é o custo-benefício regulatório de exigir esse novo formulário de licenciamento, como eu estruturo essa análise?",
+    "should_trigger": true
+  },
+  {
+    "query": "a diretoria decidiu criar uma nova coordenação dentro da CGGE, preciso saber quais artigos do regimento interno precisam mudar por causa disso",
+    "should_trigger": false
+  },
+  {
+    "query": "identificamos um risco de possível nepotismo na contratação de terceirizados na nossa regional, isso precisa ir pro SITAI?",
+    "should_trigger": false
+  },
+  {
+    "query": "quero modelar o processo de emissão de autorização de pesquisa usando SIPOC, quais são as entradas e saídas principais?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso atualizar os indicadores do PGR do ICMBio pro relatório semestral da alta gestão",
+    "should_trigger": false
+  },
+  {
+    "query": "o que é análise de impacto regulatório, me dá uma definição rápida",
+    "should_trigger": false
+  },
+  {
+    "query": "posso te mandar esse contrato de prestação de serviços pra você apontar as cláusulas problemáticas?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso fazer uma análise de impacto de uma mudança no nosso sistema de vendas, quais áreas da empresa eu devo consultar antes de implementar?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso verificar se tem verbo duplicado entre a competência da CGOV e da CGGP no novo regimento, isso é auditoria de competências né?",
+    "should_trigger": false
+  },
+  {
+    "query": "meu servidor quer migrar pro teletrabalho, como monto o plano de entregas dele no PGD?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso revisar o EIA/RIMA de um empreendimento que vai impactar uma unidade de conservação, o que precisa constar nesse estudo?",
+    "should_trigger": false
+  }
+]

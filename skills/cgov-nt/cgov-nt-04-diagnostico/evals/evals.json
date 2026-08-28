@@ -1,0 +1,26 @@
+{
+  "skill_name": "cgov-nt-04-diagnostico",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "NT_ESTADO.md tem os achados quantitativos de cgov-nt-02 sobre duas perguntas da consulta (teletrabalho Art. 19 e limite de 50% Art. 27). Redija os Capítulos 2 e 3.",
+      "expected_output": "Capítulo 2 com subseções de análise quantitativa (tabelas de frequência reais + leitura crítica) e Capítulo 3 com Quadro Consolidado de Achados numerado e priorizado (Urgente/Prioritário/Desejável), sem diagramas Mermaid forçados (o achado é puramente quantitativo).",
+      "expectations": [
+        "As tabelas do Capítulo 2 usam os números exatos vindos de NT_ESTADO.md, sem reestimar",
+        "O Capítulo 3 atribui prioridade a cada achado com critério consistente (Urgente/Prioritário/Desejável) e justificativa",
+        "Nenhum diagrama Mermaid é incluído, pois os achados não envolvem fluxo processual",
+        "A contagem de achados por prioridade é registrada de volta em NT_ESTADO.md para uso por cgov-nt-07"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Os achados agora são de auditoria de competências (sobreposição entre Ouvidoria e Comitê de Ética) e de modelagem de fluxo processual com 4 etapas. Redija os Capítulos 2 e 3.",
+      "expected_output": "Capítulo 2 inclui uma Matriz RACI (achado de competências) e um diagrama Mermaid do fluxo de 4 etapas, cada um com parágrafo introdutório e leitura crítica.",
+      "expectations": [
+        "Um diagrama Mermaid é incluído dentro de um bloco de código ```mermaid``` para o achado de fluxo",
+        "Uma Matriz RACI é incluída para o achado de sobreposição de competências",
+        "O Capítulo 3 consolida os dois achados na mesma tabela, com eixos distintos identificados"
+      ]
+    }
+  ]
+}

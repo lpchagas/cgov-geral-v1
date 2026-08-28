@@ -1,0 +1,82 @@
+[
+  {
+    "query": "preciso atualizar os indicadores do PGR do ICMBio pro relatório semestral da alta gestão, tem uns 5 que ficaram amarelos e a diretoria vai querer explicação",
+    "should_trigger": true
+  },
+  {
+    "query": "a gente ainda não tem o PGR formalizado, por onde eu começo a estruturar isso conforme a portaria 1.572?",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-pgr me ajuda a montar o painel de monitoramento desse ciclo",
+    "should_trigger": true
+  },
+  {
+    "query": "queria mapear oportunidades de inovação nos processos de licenciamento, tem muito retrabalho e reclamação",
+    "should_trigger": true
+  },
+  {
+    "query": "cara, preciso conectar os objetivos do PGR com o planejamento estratégico 2025-2027, mas não sei se já existe esse alinhamento mapeado em algum lugar",
+    "should_trigger": true
+  },
+  {
+    "query": "PGR - preciso definir um indicador institucional novo, ele tem que ser diferente dos indicadores individuais do PGD, não sei bem a diferença na prática",
+    "should_trigger": true
+  },
+  {
+    "query": "terminamos um projeto piloto de automação de um processo, precisamos registrar isso como iniciativa de inovação do PGR, como estrutura isso?",
+    "should_trigger": true
+  },
+  {
+    "query": "o indicador de UCs com plano de manejo atualizado ficou abaixo de 70% da meta, isso é crítico? precisamos escalar pra alta gestão?",
+    "should_trigger": true
+  },
+  {
+    "query": "quero fazer o relatório de monitoramento do ciclo anterior do PGR pra apresentar pra diretoria colegiada",
+    "should_trigger": true
+  },
+  {
+    "query": "Portaria 1.572 - preciso entender que campos tem que ter na ficha de um indicador de resultado institucional",
+    "should_trigger": true
+  },
+  {
+    "query": "meu servidor quer migrar pro teletrabalho, como monto o plano de entregas dele no PGD?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso atualizar a matriz de riscos institucionais do nosso setor, o CTGRIC pediu até sexta e a planilha tá desatualizada desde 2022",
+    "should_trigger": false
+  },
+  {
+    "query": "quero modelar o processo de emissão de autorização de pesquisa usando SIPOC, quais são as entradas e saídas?",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria decidiu criar uma nova coordenação, quais artigos do regimento interno precisam mudar por causa disso?",
+    "should_trigger": false
+  },
+  {
+    "query": "sou gerente de produto numa startup, como eu defino OKRs trimestrais pro meu time?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso checar se tem verbo duplicado entre a competência da CGOV e da CGGP no novo regimento",
+    "should_trigger": false
+  },
+  {
+    "query": "precisamos avaliar se essa portaria de 2019 sobre licenciamento ainda tá cumprindo o objetivo dela ou se já era pra ter sido revista",
+    "should_trigger": false
+  },
+  {
+    "query": "o que é gestão por resultados, me dá uma definição rápida",
+    "should_trigger": false
+  },
+  {
+    "query": "queremos organizar uma hackathon interna na empresa pra estimular ideias novas dos funcionários, como estruturo isso?",
+    "should_trigger": false
+  },
+  {
+    "query": "sou PM de um projeto de TI aqui na empresa, quais riscos eu devo colocar no meu risk register pra apresentar no sprint review de amanhã?",
+    "should_trigger": false
+  }
+]

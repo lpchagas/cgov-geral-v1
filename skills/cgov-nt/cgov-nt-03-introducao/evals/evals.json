@@ -1,0 +1,26 @@
+{
+  "skill_name": "cgov-nt-03-introducao",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "NT_ESTADO.md já existe (Tipo B, consulta interna sobre a revisão da IN 14/2025 do PGD, 351 respondentes, Processo SEI 02070.007004/2026-68, achados de cgov-nt-02 já registrados). Redija o Capítulo 1 — Introdução.",
+      "expected_output": "Capítulo 1 no formato canônico da NT (cabeçalho institucional, 1. DESTINATÁRIO, 2. INTERESSADO, 3. REFERÊNCIAS, Capítulo 1 com 1.1/1.2/1.3), citando o inciso do Art. 37 identificado na triagem e mencionando os 351 respondentes sem inventar dados não presentes em NT_ESTADO.md.",
+      "expectations": [
+        "A numeração segue o padrão '### Capítulo 1' com subseções '#### 1.1 / 1.2 / 1.3' reiniciadas por capítulo (não '4.1.1' subordinado à Seção 4)",
+        "O texto usa verbos no presente do indicativo na prosa analítica, evitando futuro simples fora de citação de dispositivo normativo",
+        "A saída não inclui nenhuma seção fora do template (sem bullet points soltos no lugar de prosa)",
+        "Nenhum número de norma é citado sem constar das referências levantadas na triagem",
+        "Não é gerado arquivo .docx"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Redija a introdução da NT, mas o NT_ESTADO.md não tem o número da Nota Técnica nem o destinatário definido ainda.",
+      "expected_output": "A skill não preenche esses campos com um placeholder genérico silencioso; lista as pendências explicitamente e pergunta ao usuário antes ou em paralelo à entrega do restante do capítulo.",
+      "expectations": [
+        "A resposta sinaliza explicitamente os campos ausentes (número da NT, destinatário)",
+        "A resposta não inventa um destinatário ou número de NT plausível para preencher a lacuna"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "skill_name": "cgov-nt-05-propostas",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "O Quadro Consolidado de Achados (Capítulo 3) tem 3 achados: um de alta rejeição ao limite de 50% de teletrabalho (Urgente), um de ambiguidade no prazo de retorno de 30/60 dias (Prioritário), e um pedido de melhoria redacional sem urgência (Desejável). Redija o Capítulo 4.",
+      "expected_output": "Três recomendações numeradas, cada uma referenciando o achado nº correspondente do Capítulo 3, com fundamento normativo e risco institucional, mais Tabela de Matriz de Consolidação e Quadro de Prioridades herdando as prioridades já atribuídas no Capítulo 3.",
+      "expectations": [
+        "Cada recomendação cita explicitamente o número do achado do Capítulo 3 do qual deriva",
+        "As prioridades do Quadro de Prioridades final são idênticas às atribuídas no Capítulo 3 (Urgente/Prioritário/Desejável), sem reclassificação não justificada",
+        "Nenhuma recomendação nova é introduzida sem lastro em achado do Capítulo 3"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Um dos achados é urgente (queda abrupta de participação de servidores de UCs na consulta), mas não há dados suficientes para saber a causa raiz. Redija a recomendação correspondente.",
+      "expected_output": "A skill não inventa uma causa raiz nem uma solução definitiva; registra a recomendação como 'necessidade de estudo complementar', explicando o que precisa ser levantado.",
+      "expectations": [
+        "A recomendação é explicitamente rotulada como necessidade de estudo complementar",
+        "A skill não força uma solução técnica sem lastro nos dados disponíveis"
+      ]
+    }
+  ]
+}

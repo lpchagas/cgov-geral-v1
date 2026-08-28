@@ -1,0 +1,24 @@
+{
+  "skill_name": "cgov-nt-06-quesitos-pfe",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "NT_ESTADO.md é Tipo B (consulta interna sobre a revisão da IN 14/2025 do PGD), mas a triagem marcou cgov-nt-06 como necessária porque o parecer subsidiará a revisão da própria IN perante a PFE. Redija a análise para a PFE.",
+      "expected_output": "A skill executa normalmente mesmo sendo Tipo B, respondendo aos 8 quesitos da Portaria ICMBio nº 271/2013, sem recusar a execução apenas por não ser Tipo A.",
+      "expectations": [
+        "A skill não interrompe a execução alegando que só se aplica a Tipo A",
+        "Todos os 8 quesitos reais do Anexo II recebem resposta assertiva (Sim/Não/Parcialmente) com justificativa, incluindo os quesitos 2, 3, 5 e 6 (ausentes da versão anterior desta skill)",
+        "Referências aos achados dos Capítulos 2-4 são citadas quando pertinentes (ex.: exequibilidade no quesito 7, custo-benefício no quesito 8)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A triagem não deixou claro se este parecer vai para a PFE. O usuário pede diretamente 'roda os quesitos da PFE'.",
+      "expected_output": "A skill verifica NT_ESTADO.md, nota a ambiguidade, e pergunta ao usuário se de fato a NT seguirá para a PFE antes de prosseguir, em vez de presumir.",
+      "expectations": [
+        "A skill identifica a ambiguidade sobre o destino do produto antes de redigir",
+        "A skill faz uma pergunta de confirmação objetiva ao usuário"
+      ]
+    }
+  ]
+}

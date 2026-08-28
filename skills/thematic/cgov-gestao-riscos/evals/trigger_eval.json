@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Preciso mapear os riscos do processo de licenciamento ambiental da nossa unidade avançada em Manaus. Já temos uma planilha com uns 8 riscos identificados só que escritos de qualquer jeito tipo 'atraso no processo' e 'falta de servidor'. Pode me ajudar a estruturar isso na matriz e classificar certinho conforme a metodologia do ICMBio?",
+    "should_trigger": true
+  },
+  {
+    "query": "cara, o CTGRIC pediu pra gente atualizar a matriz de riscos do nosso setor até sexta e eu nem sei por onde começar, tem uma planilha antiga de 2022 que ngm mexeu mais",
+    "should_trigger": true
+  },
+  {
+    "query": "o analista escreveu o risco assim: 'risco de vazamento de dados sigilosos' - isso tá certo ou falta alguma coisa pra ficar na sintaxe que a portaria 975 pede?",
+    "should_trigger": true
+  },
+  {
+    "query": "como eu calculo o risco residual depois que já apliquei os controles? tenho probabilidade 4 e impacto 3 no risco inerente e um controle que classifiquei como parcialmente adequado",
+    "should_trigger": true
+  },
+  {
+    "query": "identificamos um risco de possível nepotismo na contratação de terceirizados na nossa regional, isso precisa ir pro SITAI ou só fica registrado na matriz normal mesmo?",
+    "should_trigger": true
+  },
+  {
+    "query": "o risco residual do processo de fiscalização ambiental ficou em 15, que é acima do apetite que a diretoria definiu (10). preciso montar o plano de tratamento agora, quais campos eu preciso preencher?",
+    "should_trigger": true
+  },
+  {
+    "query": "alguém da PFE perguntou se a nossa matriz de riscos segue a ISO 31000 e a portaria 975/2021 ao mesmo tempo, precisamos justificar isso no relatório de gestão",
+    "should_trigger": true
+  },
+  {
+    "query": "terminamos de mapear os riscos do projeto de recuperação de área degradada, agora preciso saber com que frequência devo levar isso pro CTGRIC e como registrar no SEI",
+    "should_trigger": true
+  },
+  {
+    "query": "tem um problema que sempre que a internet cai na sede a gente perde os dados do sistema de monitoramento de fauna por umas 2 horas, isso é grave e queria formalizar isso de um jeito que a auditoria aceite",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-gestao-riscos me ajuda a revisar a matriz de riscos do Plano de Manejo da Flona do Tapajós",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso atualizar os indicadores do PGR do ICMBio pro relatório semestral da alta gestão, tem uns 5 indicadores que ficaram amarelos e a diretoria vai querer explicação",
+    "should_trigger": false
+  },
+  {
+    "query": "quero modelar o processo de emissão de autorização de pesquisa usando SIPOC, quais são as entradas e saídas principais que eu deveria mapear?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso verificar se tem verbo duplicado entre a competência da CGOV e da CGGP no novo regimento, isso é auditoria de competências né? queria rodar essa checagem antes de mandar pra PFE",
+    "should_trigger": false
+  },
+  {
+    "query": "estou avaliando um fornecedor novo pra nossa empresa de logística, quais os riscos financeiros eu deveria olhar antes de fechar contrato com eles?",
+    "should_trigger": false
+  },
+  {
+    "query": "posso te mandar esse contrato de prestação de serviços pra você apontar as cláusulas de risco jurídico mais problemáticas?",
+    "should_trigger": false
+  },
+  {
+    "query": "o que é a ISO 31000, me dá um resumo rápido",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria decidiu criar uma nova coordenação dentro da CGGE, preciso saber quais artigos do regimento interno precisam mudar por causa disso",
+    "should_trigger": false
+  },
+  {
+    "query": "meu servidor quer migrar pro teletrabalho, como monto o plano de entregas dele no PGD?",
+    "should_trigger": false
+  },
+  {
+    "query": "sou PM de um projeto de TI aqui na empresa, quais riscos eu devo colocar no meu risk register pra apresentar no sprint review de amanhã?",
+    "should_trigger": false
+  },
+  {
+    "query": "identifiquei uma vulnerabilidade de SQL injection no sistema que a gente usa pra cadastro de visitantes do parque, isso conta como risco pra eu reportar pro time de TI?",
+    "should_trigger": false
+  }
+]

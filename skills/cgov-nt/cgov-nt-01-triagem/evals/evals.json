@@ -1,0 +1,38 @@
+{
+  "skill_name": "cgov-nt-01-triagem",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Preciso abrir uma Nota Técnica sobre os resultados da nossa consulta interna a respeito da revisão da Instrução Normativa nº 14/2025, que trata das regras do PGD. Processo SEI nº 02070.007004/2026-68. Tivemos 351 respondentes. A NT vai subsidiar a decisão da Presidência e vai para a PFE se manifestar sobre a revisão da IN.",
+      "expected_output": "Ficha de Enquadramento classificando a demanda no inciso VII do Art. 37 (operacionalização do PGD) e/ou IX (gestão de riscos, se aplicável), Tipo B (consulta interna com dados), com necessidade de cgov-nt-06 marcada como SIM (com base no destino do produto — vai para a PFE), mesmo sendo Tipo B. Cria NT_ESTADO.md com o roteiro completo.",
+      "expectations": [
+        "O enquadramento cita o Art. 37 da Portaria ICMBio nº 5.592/2025 com o inciso correto (VII)",
+        "O tipo de produto é classificado como B",
+        "cgov-nt-06 (quesitos PFE) é marcada como necessária, com justificativa baseada no destino do produto, não apenas no Tipo",
+        "É criado ou proposto o arquivo NT_ESTADO.md com metadados, enquadramento e roteiro",
+        "Nenhum número de artigo ou norma é inventado sem indicação de confirmação"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quero elaborar um parecer analisando uma minuta de portaria que cria um novo comitê de sustentabilidade no ICMBio, para verificar se há sobreposição com a Coordenação de Meio Ambiente já existente.",
+      "expected_output": "Ficha de Enquadramento classificando a demanda no inciso II e/ou III do Art. 37 (Política de Governança Institucional / gestão por processos), Tipo C (governança institucional), sinalizando que cgov-nt-02 é dispensável na ausência de dados brutos e recomendando diagnóstico de sobreposição de competências antes da redação.",
+      "expectations": [
+        "O enquadramento cita o Art. 37 com inciso pertinente à governança institucional",
+        "O tipo de produto é classificado como C",
+        "cgov-nt-02 é marcada como dispensável, com justificativa (ausência de dados brutos)",
+        "A skill recomenda cgov-auditoria-competencias como diagnóstico prévio pertinente ao caso de sobreposição"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Preciso que você calcule a folha de pagamento do último trimestre da Diretoria de Administração e emita um relatório financeiro.",
+      "expected_output": "A skill não deve forçar um enquadramento no Art. 37; deve reconhecer que a demanda foge das competências da CGOV (Governança e Gestão de Riscos) e sugerir que o usuário reencaminhe à unidade competente, aplicando a Regra Especial de demanda fora de escopo.",
+      "expectations": [
+        "A resposta identifica explicitamente que a demanda não se enquadra em nenhum inciso do Art. 37",
+        "A resposta não inventa um enquadramento artificial só para prosseguir",
+        "A resposta pergunta ao usuário se deseja prosseguir mesmo assim ou reencaminhar"
+      ]
+    }
+  ]
+}

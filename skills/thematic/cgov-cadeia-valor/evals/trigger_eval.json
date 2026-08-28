@@ -1,0 +1,82 @@
+[
+  {
+    "query": "preciso atualizar a cadeia de valor do ICMBio porque criamos uma nova coordenação e os macroprocessos antigos não refletem mais a estrutura",
+    "should_trigger": true
+  },
+  {
+    "query": "quero modelar com SIPOC o processo de emissão de autorização de pesquisa, quais são as entradas e saídas que eu deveria mapear?",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-cadeia-valor me ajuda a revisar o catálogo de produtos e serviços da Diretoria de Uso Público",
+    "should_trigger": true
+  },
+  {
+    "query": "cara, preciso separar os processos finalísticos dos de apoio no nosso macroprocesso de fiscalização, não sei bem a diferença na prática",
+    "should_trigger": true
+  },
+  {
+    "query": "a gente vai começar o DFT esse semestre e o pessoal da CGGP pediu pra eu já organizar quais processos e volumes de entrega alimentam o cálculo, queria entender como conectar isso com a cadeia de valor",
+    "should_trigger": true
+  },
+  {
+    "query": "o catálogo de serviços tá desatualizado desde 2021, tem um monte de serviço novo que não tá lá, tipo autorização pra pesquisa com drone",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso verificar se todos os nossos macroprocessos estão conectados a algum objetivo do planejamento estratégico 2025-2027, acho que tem uns soltos",
+    "should_trigger": true
+  },
+  {
+    "query": "CADEIA_VALOR - me ajuda a estruturar um SIPOC pro processo de licenciamento ambiental simplificado",
+    "should_trigger": true
+  },
+  {
+    "query": "sou da unidade de biodiversidade, quero saber se o jeito que a gente organiza nossos processos internos hoje bate com a arquitetura de processos oficial do ICMBio",
+    "should_trigger": true
+  },
+  {
+    "query": "queria revisar os macroprocessos gerenciais porque acho que gestão de riscos e governança estão meio sobrepostos na nossa cadeia de valor atual",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso mapear os riscos do processo de licenciamento ambiental, já tenho uma planilha com uns 8 riscos escritos de qualquer jeito tipo 'atraso no processo'",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria quer editar uma nova portaria e perguntou se precisa fazer AIR antes",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria decidiu criar uma nova coordenação, quais artigos do regimento precisam mudar por causa disso?",
+    "should_trigger": false
+  },
+  {
+    "query": "meu servidor quer migrar pro teletrabalho, como monto o plano de entregas dele no PGD?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso atualizar os indicadores do PGR do ICMBio pro relatório semestral, tem uns que ficaram amarelos",
+    "should_trigger": false
+  },
+  {
+    "query": "quero desenhar o fluxo de aprovação de despesas da minha empresa, por onde eu começo?",
+    "should_trigger": false
+  },
+  {
+    "query": "o que é BPM CBOK, me dá um resumo rápido",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso checar se tem verbo duplicado entre a competência da CGOV e da CGGP no novo regimento",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso documentar o fluxo de deploy do nosso sistema, tipo um runbook de CI/CD pro time de TI",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso saber quantos servidores temos hoje por unidade pra um relatório de RH, tem uma planilha de lotação em algum lugar?",
+    "should_trigger": false
+  }
+]

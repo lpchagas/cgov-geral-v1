@@ -1,0 +1,82 @@
+[
+  {
+    "query": "a diretoria decidiu criar uma nova coordenação dentro da CGGE, preciso saber quais artigos do regimento interno precisam mudar por causa disso",
+    "should_trigger": true
+  },
+  {
+    "query": "saiu um novo decreto de estrutura regimental do ICMBio, vamos ter que reescrever o regimento inteiro?",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-regimento-interno me ajuda a redigir a minuta de alteração do artigo que trata da competência da CGOV",
+    "should_trigger": true
+  },
+  {
+    "query": "achamos um erro material no artigo 40 do regimento, tipo um número de portaria errado, isso dá pra corrigir só com uma errata?",
+    "should_trigger": true
+  },
+  {
+    "query": "REGIMENTO_INTERNO - preciso saber se a presidência tem delegação pra assinar essa alteração ou se precisa subir pro ministério",
+    "should_trigger": true
+  },
+  {
+    "query": "vamos extinguir uma coordenação e redistribuir as competências dela entre duas outras, como eu estruturo a minuta de alteração do RI?",
+    "should_trigger": true
+  },
+  {
+    "query": "cara, preciso mandar um ofício circular pras unidades pra elas validarem se a redação nova do regimento reflete o que elas realmente fazem",
+    "should_trigger": true
+  },
+  {
+    "query": "a portaria 5.592 já tá desatualizada em relação ao nosso organograma real, tem duas coordenações que mudaram de nome e não foi atualizado",
+    "should_trigger": true
+  },
+  {
+    "query": "antes de submeter pra PFE, preciso montar o quadro de consistência regimental verificando se não ficou sobreposição de competência entre as unidades",
+    "should_trigger": true
+  },
+  {
+    "query": "o decreto de estrutura regimental novo trouxe prazo pra gente publicar o novo RI, precisamos montar um plano com esse prazo",
+    "should_trigger": true
+  },
+  {
+    "query": "identificamos um risco de possível nepotismo na contratação de terceirizados, isso precisa ir pro SITAI ou só fica registrado na matriz normal?",
+    "should_trigger": false
+  },
+  {
+    "query": "quero modelar o processo de emissão de autorização de pesquisa usando SIPOC, quais são as entradas e saídas principais?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso atualizar os indicadores do PGR pro relatório semestral, tem uns que ficaram amarelos",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria quer editar uma portaria nova e perguntou se precisa fazer AIR antes",
+    "should_trigger": false
+  },
+  {
+    "query": "meu servidor quer migrar pro teletrabalho, como monto o plano de entregas dele no PGD?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso revisar o estatuto social da nossa empresa porque vamos abrir uma filial nova, o que precisa mudar?",
+    "should_trigger": false
+  },
+  {
+    "query": "o que é regimento interno, qual a diferença pra um estatuto social?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso saber quantos cargos comissionados temos hoje por unidade pra um relatório de RH",
+    "should_trigger": false
+  },
+  {
+    "query": "um servidor novo vai entrar na nossa coordenação semana que vem, como eu organizo o processo de integração dele?",
+    "should_trigger": false
+  },
+  {
+    "query": "posso te mandar esse contrato de prestação de serviços pra você apontar as cláusulas problemáticas?",
+    "should_trigger": false
+  }
+]

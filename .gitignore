@@ -1,0 +1,22 @@
+# Acervo local e produtos de processos SEI: nunca publicar
+/local/
+
+# Metadados locais de ferramentas de agentes
+/.agents/
+/.codex/
+
+# Arquivos temporários e caches de ferramentas
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Artefatos de edição e exportação local
+*.docx~
+*.xlsx~
+*.pptx~
