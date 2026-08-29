@@ -4,6 +4,7 @@
 # Metadados locais de ferramentas de agentes
 /.agents/
 /.codex/
+/.claude/
 
 # Arquivos temporários e caches de ferramentas
 .DS_Store

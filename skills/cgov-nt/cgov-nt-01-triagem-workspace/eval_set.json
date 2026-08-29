@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Bom dia! Preciso abrir uma Nota Técnica sobre a revisão da Portaria nº 975/2021 (metodologia de riscos). O processo SEI é 02070.009812/2026-40. Ainda não tem nada montado, é o início mesmo.",
+    "should_trigger": true
+  },
+  {
+    "query": "Será que dá pra vc me ajudar a enquadrar uma demanda? chegou um processo aqui e eu nem sei se é competência nossa ou se manda pra outra coordenação",
+    "should_trigger": true
+  },
+  {
+    "query": "Quero elaborar um parecer sobre a criação de um novo comitê de biodiversidade marinha, preciso saber se cabe à CGOV se manifestar",
+    "should_trigger": true
+  },
+  {
+    "query": "me passa o capítulo 4 dessa nota técnica do processo 02070.011200/2026-05, sobre a atualização do regimento interno",
+    "should_trigger": false
+  },
+  {
+    "query": "Essa NT vai precisar passar pela PFE? é sobre uma minuta de portaria que altera competência de duas coordenações",
+    "should_trigger": true
+  },
+  {
+    "query": "Preciso q vc me ajude a abrir uma nt sobre a revisao do plano de integridade, tem processo sei ja (02070.020310/2026-12), soh naum sei por onde comecar",
+    "should_trigger": true
+  },
+  {
+    "query": "Anexei aqui o despacho e a minuta que chegaram pra CGOV essa semana. isso precisa virar nota técnica, mas eu não sei nem qual eixo do art 37 se aplica ainda",
+    "should_trigger": true
+  },
+  {
+    "query": "Já tinha começado a análise desse processo semana passada só que esqueci de registrar, agora preciso formalizar como NT do zero, processo 02070.007700/2026-90",
+    "should_trigger": true
+  },
+  {
+    "query": "só uma dúvida rápida: o inciso IX do parágrafo único do art. 37 fala de quê mesmo, riscos ou processos?",
+    "should_trigger": false
+  },
+  {
+    "query": "Preciso montar a matriz de risco desse processo de licenciamento simplificado, o pessoal já apontou que o risco é alto e não tem controle nenhum implementado",
+    "should_trigger": true
+  },
+  {
+    "query": "Existe sobreposição de competência entre a CGOV e a Corregedoria nesses dois artigos da minuta? cola aqui os trechos",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso comparar a redação do art. 15 na versão que a PFE devolveu com a versão que a gente mandou originalmente, pra ver o que mudou",
+    "should_trigger": false
+  },
+  {
+    "query": "Essa entrega do plano de trabalho individual do servidor tá conforme o regimento? queria uma checagem rápida antes de aprovar no Petrvs",
+    "should_trigger": false
+  },
+  {
+    "query": "cadê o telefone do RH pra eu marcar a perícia médica, alguém sabe?",
+    "should_trigger": false
+  },
+  {
+    "query": "Preciso de uma AIR pra essa minuta que restringe uso de trilha em UC, dá pra já montar o problema regulatório e as alternativas?",
+    "should_trigger": true
+  },
+  {
+    "query": "Ajuda a modelar o SIPOC desse macroprocesso de emissão de autorização ambiental, é pra alimentar o catálogo de serviços",
+    "should_trigger": true
+  },
+  {
+    "query": "O processo 02070.020239/2025-64 já tá com NT_ESTADO.md criado e passou pelos capítulos 1 a 4, só falta fechar a conclusão e os encaminhamentos",
+    "should_trigger": true
+  },
+  {
+    "query": "Recebi uma demanda esquisita: pedem pra CGOV avaliar o mérito técnico-ambiental de um plano de manejo. isso é nosso? preciso entender antes de responder o despacho",
+    "should_trigger": true
+  },
+  {
+    "query": "Abre uma NT pra mim sobre a proposta de fusão de duas gerências regionais, processo SEI 02070.006650/2026-33, ainda sem nenhuma análise prévia",
+    "should_trigger": true
+  },
+  {
+    "query": "Essa consulta interna sobre o novo formulário de avaliação de desempenho, com 210 respostas, vai virar NT — mas antes preciso saber o enquadramento e se precisa passar pela PFE",
+    "should_trigger": true
+  }
+]
