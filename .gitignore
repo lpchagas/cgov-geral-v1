@@ -21,3 +21,8 @@ htmlcov/
 *.docx~
 *.xlsx~
 *.pptx~
+
+# Saídas brutas do loop de otimização de descrição (skill-creator run_loop):
+# logs/resultados intermediários por execução — o resultado final revisado
+# (best_description) é aplicado no SKILL.md, não versionado bruto aqui.
+loop_results/
