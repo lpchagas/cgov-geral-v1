@@ -27,6 +27,13 @@ O estado de cada processo vive exclusivamente em
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |
 | `local/` | Processos, insumos e acervo local | Nunca adicionar ao Git. |
 
+## Multiplataforma
+
+Este projeto é operado a partir de mais de um assistente (Claude, ChatGPT,
+Antigravity). O mapeamento de qual arquivo cada aplicativo lê, as lacunas
+conhecidas e as pendências de decisão estão em
+[`multiplatform.md`](multiplatform.md).
+
 ## Sincronização
 
 Editar uma skill em `skills/` não altera uma skill instalada em plataforma

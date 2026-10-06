@@ -78,5 +78,13 @@
   {
     "query": "identifiquei uma vulnerabilidade de SQL injection no sistema que a gente usa pra cadastro de visitantes do parque, isso conta como risco pra eu reportar pro time de TI?",
     "should_trigger": false
+  },
+  {
+    "query": "a entrega CGOV_23 do plano de entregas está com risco de atraso por causa de uma dependência externa, isso entra na matriz de riscos institucionais da CGOV?",
+    "should_trigger": false
+  },
+  {
+    "query": "quais são os riscos e restrições dessa entrega específica que estou desenhando pro plano de trabalho individual do servidor?",
+    "should_trigger": false
   }
 ]

@@ -1,0 +1,66 @@
+[
+  {
+    "query": "tenho várias portarias em PDF sem camada de texto em local/normative-sources; faça OCR, transcreva e salve um .md para cada uma",
+    "should_trigger": true
+  },
+  {
+    "query": "transforme esta lei escaneada em Markdown fiel e confira página por página antes de gravar",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-transcrever-normativos processe apenas os PDFs que ainda não têm arquivo Markdown correspondente",
+    "should_trigger": true
+  },
+  {
+    "query": "o texto extraído deste decreto virou uma sequência de códigos de glifos; preciso de uma transcrição legível por IA",
+    "should_trigger": true
+  },
+  {
+    "query": "extraia os anexos e as tabelas desta instrução normativa e faça uma segunda revisão visual",
+    "should_trigger": true
+  },
+  {
+    "query": "gere sidecars .md para os atos normativos desta pasta, preservando as redações revogadas que aparecem tachadas",
+    "should_trigger": true
+  },
+  {
+    "query": "revise a transcrição OCR desta resolução contra o PDF e só substitua o arquivo final se a conferência passar",
+    "should_trigger": true
+  },
+  {
+    "query": "inventarie quais PDFs normativos locais ainda estão ilegíveis por máquina e converta os pendentes",
+    "should_trigger": true
+  },
+  {
+    "query": "resuma para mim as principais obrigações do Decreto 9.203",
+    "should_trigger": false
+  },
+  {
+    "query": "compare a redação antiga e a nova do artigo 37 e liste as mudanças",
+    "should_trigger": false
+  },
+  {
+    "query": "quero elaborar uma Nota Técnica para a PFE sobre a atualização do regimento interno",
+    "should_trigger": false
+  },
+  {
+    "query": "pesquise na internet qual é a versão vigente da política de governança federal",
+    "should_trigger": false
+  },
+  {
+    "query": "converta este relatório de auditoria em PDF para texto corrido",
+    "should_trigger": false
+  },
+  {
+    "query": "faça uma análise jurídica da Portaria MMA 296 e diga se ela continua válida",
+    "should_trigger": false
+  },
+  {
+    "query": "atualize o catálogo público com os links oficiais das normas",
+    "should_trigger": false
+  },
+  {
+    "query": "extraia uma tabela de um relatório financeiro em PDF para Excel",
+    "should_trigger": false
+  }
+]

@@ -15,8 +15,6 @@ description: >
   "revisar os macroprocessos". Acione também quando o usuário descrever um
   fluxo de atividades e pedir para estruturá-lo na arquitetura institucional
   do ICMBio.
-instalado_em: 2026-08-04
-status: instalada na conta Claude (Customize -> Skills)
 ---
 
 # cgov-cadeia-valor — Cadeia de Valor, Catálogo de Produtos/Serviços e DFT (CGOV/ICMBio)

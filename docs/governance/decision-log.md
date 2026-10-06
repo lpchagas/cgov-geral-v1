@@ -2,7 +2,7 @@
 
 **Processo/Iniciativa:** Desenvolvimento de ferramentas de IA para suporte ao
 trabalho da Coordenação de Governança (CGOV/ICMBio)
-**Data de registro:** 05/07/2026 (última atualização: 28/08/2026)
+**Data de registro:** 05/07/2026 (última atualização: 29/08/2026)
 **Responsável:** Coordenação de Governança — CGOV/CGGE/ICMBio
 **Natureza deste documento:** Registro cronológico e decisório, para arquivamento
 junto ao acervo da CGOV, do processo de diagnóstico, desenho, validação e adoção
@@ -119,7 +119,7 @@ completo da Portaria nº 5.592/2025 para `04_fontes_normativas` — as ferrament
 de acesso ao computador do usuário disponíveis nesta sessão só gravam conteúdo
 em texto, não arquivos binários, entre pastas do mesmo computador. O original
 permanece em
-`C:\Users\leand\My Drive\CGOV\CGOV_Normativas\20251211_Portaria ICMBio 5.592_Regimento Interno.pdf`,
+`<Google Drive>\CGOV\CGOV_Normativas\20251211_Portaria ICMBio 5.592_Regimento Interno.pdf`,
 disponível para cópia manual se desejado.
 
 ## 8. Estado final e localização dos artefatos
@@ -670,7 +670,471 @@ artefatos históricos só retornam a `archive/` após sanitização documental.
 workspaces em `local/analyses/SEI_[processo]_[apelido]/`. Os caminhos numerados
 que aparecem em seções anteriores deste registro são históricos.
 
-## 17. Pendências abertas (para continuidade)
+## 17. Consolidação do catálogo normativo público (29/08/2026)
+
+**Decisão 29 — índice local substituído pelo catálogo público.** As informações
+operacionais e normativas do índice local de fontes foram incorporadas em
+`docs/references/normative-catalog.md`, com registro das situações de
+legibilidade, revogações, cadeias normativas, siglas e pendências. A revisão
+identificou também a Portaria Conjunta CGU/CEP nº 3/2025, presente no acervo e
+ausente do índice anterior. O índice tornou-se redundante e foi removido; o
+catálogo público permanece como sua referência documental sanitizada.
+
+## 18. Compatibilidade multiplataforma — Claude, ChatGPT, Antigravity (29/08/2026)
+
+**Contexto.** O Coordenador solicitou que o projeto funcione com confiabilidade
+em três aplicativos instalados (Claude, ChatGPT desktop, Antigravity IDE),
+sem conflito entre eles. Diagnóstico completo em `docs/multiplatform.md`.
+
+**Decisão 30 — espelho de skills para a Antigravity.** Criado `.agents/skills/`
+(gitignored) com cópia das 12 `SKILL.md` de `skills/cgov-nt/` e
+`skills/thematic/`, porque a Antigravity só descobre skills nesse caminho.
+`skills/` permanece a única fonte de verdade; regra de resincronização
+registrada em `CONTRIBUTING.md`.
+
+**Decisão 31 — `analista-governanca.md` dividido em núcleo + anexos.** Medição
+revelou que o documento v3.0 (56.199 caracteres) excedia o limite de 8.000
+caracteres do campo Instructions de um Project no ChatGPT — seria truncado
+sem aviso. O documento (v3.0) foi arquivado em
+`local/archive/system-instructions/analista-governanca-v3.md` e substituído
+pela v4.0: um núcleo de 7.868 caracteres (persona, siglas, cadeia de
+raciocínio, guardrails, protocolo de incerteza, lista de funções) mais dois
+anexos de referência (`analista-governanca-anexo-normativo.md`,
+`analista-governanca-anexo-funcoes.md`) para anexar à Library do
+Project/Gem. **Ressalva:** a condensação do núcleo foi feita sem segunda
+verificação humana — revisar antes de uso em produção (pendência aberta,
+item 19 abaixo).
+
+**Correção de rota — `analista-processos-sei.md` não precisava do mesmo
+tratamento.** A proposta original de 28/08/2026 listou este arquivo junto de
+`analista-governanca.md` como candidato à mesma divisão. Leitura integral do
+arquivo mostrou que seu cabeçalho já declara `Ambiente de execução: Claude
+Cowork` e que ele roteia para skills reais do Claude — não é um documento
+autossuficiente para ChatGPT/Gemini. Fica registrada, em vez disso, a
+sobreposição entre `escritorio-cgov.md`, `analista-processos-sei.md` e a
+própria suíte de skills dentro do ambiente Claude — não resolvida nesta
+rodada (pendência aberta, item 20 abaixo).
+
+**Decisão 32 — nunca criar `GEMINI.md` na raiz.** A Antigravity dá precedência
+a `GEMINI.md` sobre `AGENTS.md` em caso de conflito. Para evitar uma regra
+silenciosa vencendo `AGENTS.md` sem registro, `AGENTS.md` permanece o único
+arquivo de regras na raiz para as três ferramentas.
+
+**Não resolvido — limite de instruções de um Gem (Gemini).** Fontes públicas
+divergem entre ~200 e ~4.000 caracteres, sem uma fonte oficial única
+localizada nesta sessão. O núcleo de 7.868 caracteres foi dimensionado para o
+teto do ChatGPT (8.000), não para o Gemini — pode precisar de nova
+condensação se for usado em um Gem.
+
+**⚠️ Achado crítico — a suíte `cgov-nt` instalada no Claude está desatualizada
+em relação à fonte.** Comparando a `description` das 7 skills `cgov-nt-01` a
+`07` tal como disponíveis nesta sessão (skills instaladas na conta) contra o
+texto em `skills/cgov-nt/*/SKILL.md`, seis das sete (todas exceto
+`cgov-nt-05`) ainda referenciam o caminho antigo
+`07_analises/[processo SEI]_[apelido]/` para o `NT_ESTADO.md`, enquanto a
+fonte já usa `local/analyses/SEI_[processo]_[apelido]/` desde a Decisão 28
+(Seção 17). Como a prática deste projeto é reinstalar por sobrescrita
+completa (não editar em produção), é provável que o corpo inteiro das skills
+instaladas — não só a descrição — ainda crie/procure `NT_ESTADO.md` na pasta
+errada. **Não verificado diretamente** (nenhuma execução real da suíte foi
+feita nesta sessão para confirmar o comportamento) — mas a fonte da
+`description` é o próprio texto instalado, o que já é evidência direta de
+desatualização. Ação pendente do Coordenador: reinstalar as 7 skills via
+Customize → Skills a partir do conteúdo atual de `skills/cgov-nt/`.
+
+**Achado menor — espaço espúrio na fonte de `cgov-regimento-interno`.** A
+`description` da skill instalada usa o gatilho `/cgov-regimento-interno`
+(correto); a fonte em `skills/thematic/cgov-regimento-interno/SKILL.md` tem
+`/cgov- regimento-interno` (espaço após o hífen). Se a fonte for reinstalada
+sem correção, o gatilho literal do comando quebra.
+
+## 19. Skill de transcrição de fontes normativas (29/08/2026)
+
+**Decisão 33 — criação de `cgov-transcrever-normativos`.** O procedimento
+validado para converter PDFs normativos locais sem camada textual confiável em
+Markdown foi formalizado como skill canônica em
+`skills/thematic/cgov-transcrever-normativos/`. A skill mantém o PDF local como
+fonte de controle, usa fonte oficial primária apenas para conferência, exige
+segunda revisão visual independente e impede a gravação final enquanto houver
+erro estrutural bloqueante.
+
+Foram incorporados três utilitários reutilizáveis: inventário de PDFs e
+arquivos `.md`, OCR local do Windows em `pt-BR` com coordenadas das linhas e
+validador de UTF-8, frontmatter, título, artigos, tabelas, caracteres inválidos
+e marcações de redação tachada. Os scripts permanecem na fonte canônica; a
+cópia de `SKILL.md` em `.agents/skills/` os referencia pelo caminho em
+`skills/thematic/`, evitando duplicação executável no espelho da Antigravity.
+
+**Validação.** `quick_validate.py` aprovou a estrutura da skill. O OCR foi
+executado sobre uma página real da Portaria ICMBio nº 2.917/2026, produzindo 44
+linhas com texto e caixas delimitadoras. O validador aprovou a transcrição
+dessa Portaria e a do Decreto nº 12.258/2024, inclusive suas cinco tabelas. O
+inventário do acervo encontrou 27 PDFs: 7 já pareados com `.md`, 18 atos
+normativos ainda sem par e 2 publicações que exigem decisão de escopo (NBR e
+guia, não atos normativos). Há ainda 3 arquivos Markdown locais cuja fonte PDF
+não tem o mesmo nome-base.
+
+O `docs/references/normative-catalog.md` foi atualizado para registrar como
+texto verificado as sete transcrições concluídas em 29/08/2026 e encerrar as
+duas pendências de legibilidade correspondentes, sem tratar os PDFs originais
+como se tivessem adquirido camada textual.
+
+**Instalação.** A fonte e o espelho da Antigravity foram criados nesta rodada.
+A skill ainda não foi instalada na conta Claude/Cowork; eventual instalação
+externa deve usar a pasta completa, incluindo `scripts/`, e ser confirmada antes
+de atualizar qualquer snapshot de referência instalado.
+
+## 20. Reinstalação da suíte `cgov-nt` e sincronização das Instruções do Projeto (30/08/2026)
+
+**Contexto.** Análise comparativa entre `cgov-geral-v1` e o projeto irmão
+`pgd-agente-icmbio` (fora deste repositório) identificou que a reorganização de
+28/08/2026 (Decisão 28) havia renomeado os caminhos na fonte sem reinstalar as
+skills afetadas, e que o texto colado nas Instruções do Projeto do Cowork havia
+ficado defasado em relação a `docs/system-instructions/escritorio-cgov.md`.
+
+**Descoberta de ferramenta.** Esta sessão do Cowork expôs `save_skill`, que cria
+ou sobrescreve (`overwrite: true`) uma skill da conta diretamente, sem depender
+do fluxo manual "Customize → Skills" registrado como único caminho até aqui
+(Decisão 17, Seção 13). A partir de agora, esse é o método preferencial para
+reinstalar skills cuja fonte vive em `skills/` — mais rápido e auditável do que
+a via manual, mas ainda sujeito à mesma exigência de confirmação antes de
+alterar skills em uso.
+
+**Decisão 34 — reinstalação das 7 skills `cgov-nt-01` a `07`.** Confirmado que a
+fonte em `skills/cgov-nt/*/SKILL.md` já usava `local/analyses/SEI_[processo]_[apelido]/`
+em todas as 7 (inclusive `cgov-nt-05`, que já estava correta antes desta rodada).
+As 7 foram reinstaladas via `save_skill` com `overwrite: true`, conteúdo idêntico
+à fonte atual — sem qualquer edição de conteúdo, apenas sincronização
+fonte→instalado. Reinstalação confirmada por resposta bem-sucedida da API para
+as 7 (`validation_errors: []`), sem execução formal dos `evals/evals.json` nesta
+rodada (verificação de conteúdo caractere-a-caractere contra a fonte foi
+considerada suficiente, dado que nenhuma lógica foi alterada — apenas o
+caminho, que já estava correto na fonte).
+
+**Decisão 35 — sincronização das Instruções do Projeto Cowork.** Corrigido, na
+fonte (`docs/system-instructions/escritorio-cgov.md`, Seção 3), o caminho
+`skills/installed-reference/` → `local/installed-reference/` (nome real da
+pasta na árvore atual). O Coordenador informou ter colado o conteúdo atualizado
+no campo de Instruções do Projeto do Cowork antes desta correção pontual — **não
+verificado nesta sessão**: o bloco de instruções injetado no início de uma
+conversa é fixado na abertura da conversa, então uma sessão já em andamento não
+reflete uma atualização feita a meio da conversa, e não há ferramenta, nesta
+sessão, para ler de volta o texto salvo no campo de configuração do projeto.
+Verificação pendente: abrir uma conversa nova neste projeto e conferir se o
+texto injetado bate com a fonte corrigida (ou colar novamente o conteúdo já
+corrigido, por segurança).
+
+### 20.1. Arquivos/skills alterados nesta fase
+
+| Item | Alteração |
+|---|---|
+| `cgov-nt-01-triagem` a `cgov-nt-07-conclusao` (skills instaladas) | Reinstaladas via `save_skill`, sem alteração de conteúdo em relação à fonte |
+| `docs/system-instructions/escritorio-cgov.md` | Corrigido `skills/installed-reference/` → `local/installed-reference/` |
+| Instruções do Projeto Cowork (campo de configuração, fora deste repositório) | Atualizada pelo Coordenador; sincronização com a fonte corrigida **pendente de confirmação** |
+
+## 21. Correção dos achados A-01 a A-03 nas skills de Plano de Entregas/PGD (30/08/2026)
+
+**Contexto.** `cgov-avaliar-entrega` e `cgov-registro-execucao` não têm fonte
+canônica neste repositório por decisão deliberada (Decisão 17, Seção 13): são
+skills que gravam pareceres e logs em `H:\Meu Drive\CGOV_PGD\`, pasta pessoal
+do Coordenador, propositalmente fora do projeto Cowork. `local/installed-reference/`
+guardava, até esta rodada, apenas um espelho de leitura do texto instalado.
+
+Três achados desta rodada, originalmente documentados no projeto irmão
+`pgd-agente-icmbio` (`skills/05_plano-skills-execucao-avaliacao_v1.md`,
+18/08/2026, fora deste repositório):
+
+- **A-01** — `cgov-avaliar-entrega` usava a faixa fixa `≥ 80% = Adequado` sem
+  qualquer sinalização de que não tem lastro na IN MGI nº 24/2023 nem em
+  normativo específico do ICMBio para avaliação de entregas do PGD.
+- **A-02** — a mesma skill exigia "sem intercorrências" como condição para o
+  conceito "Alto Desempenho" — um automatismo que a norma não prevê.
+- **A-03** — `cgov-registro-execucao` calculava o `% Concluído` sempre como
+  `etapas concluídas / total de etapas`, confundindo esforço (quantidade de
+  atividades finalizadas) com resultado (cumprimento da meta pactuada da
+  entrega).
+
+**Decisão preliminar (passo 0).** Antes de editar, foi perguntado ao
+Coordenador onde vive o texto-fonte editável dessas duas skills. Resposta:
+**só existe como skill instalada** — não há arquivo de origem em nenhum outro
+local. A partir desta rodada, `local/installed-reference/cgov-avaliar-entrega/SKILL.md`
+e `local/installed-reference/cgov-registro-execucao/SKILL.md` deixam de ser um
+mero espelho de leitura e passam a ser tratados como fonte de trabalho — a
+edição partiu deles, e o conteúdo reinstalado é idêntico ao que ali ficou
+registrado.
+
+**Decisão 36 — correção dos achados A-01 a A-03.** Ambas as skills foram
+corrigidas e reinstaladas via `save_skill` (`overwrite: true`):
+
+- `cgov-avaliar-entrega` (Fase 2): a condição "sem intercorrências" foi
+  **removida** do conceito "Alto Desempenho" (A-02) — intercorrências passam a
+  ser sempre registradas e ponderadas separadamente na análise qualitativa,
+  nunca como gatilho automático de rebaixamento. A faixa `≥ 80% = Adequado`
+  foi **mantida** (é o único corte hoje em uso e não há substituto normativo
+  identificado), mas agora rotulada explicitamente como "convenção local, não
+  norma", com ⚠️ apontando a ausência de lastro na IN MGI nº 24/2023 — tanto na
+  Fase 2 quanto nas Notas Internas da skill (A-01).
+- `cgov-registro-execucao` (Fase 2): o cálculo de `% Concluído` passa a
+  priorizar a **meta pactuada** registrada na Planilha A (quantidade, marco de
+  cronograma ou peso por trimestre) sempre que disponível. Na ausência de meta
+  pactuada explícita, a contagem de etapas concluídas/total continua sendo
+  usada, mas agora como **aproximação declarada** — sinalizada como tal no
+  relatório (novo campo "Método do % Concluído": Meta pactuada / Aproximação
+  por etapas) — nunca apresentada em silêncio como o percentual oficial (A-03).
+
+**Verificação.** As duas skills foram testadas com casos simulados antes da
+conclusão:
+1. `cgov-avaliar-entrega` — entrega com 100% concluído, conclusão no prazo
+   exato e intercorrência documentada: antes da correção, a regra antiga
+   ("Adequado" para `≥ 80%` com intercorrência) rebaixava indevidamente o
+   conceito; após a correção, a entrega se enquadra em "Alto Desempenho" (a
+   intercorrência é registrada à parte, sem rebaixar o conceito).
+2. `cgov-avaliar-entrega` — entrega com 82% concluído, sem intercorrência: o
+   parecer agora traz o aviso ⚠️ de convenção local junto ao enquadramento em
+   "Adequado" (antes, a faixa era citada sem qualquer ressalva).
+3. `cgov-registro-execucao` — entrega com meta pactuada explícita (peso por
+   trimestre) na Planilha A: o `% Concluído` é calculado contra essa meta, e o
+   relatório rotula o método como "Meta pactuada".
+4. `cgov-registro-execucao` — entrega sem meta pactuada registrada: o cálculo
+   recai na contagem de etapas, mas o relatório agora rotula o método como
+   "Aproximação por etapas" e sinaliza a ressalva, em vez de apresentar o
+   número como se fosse o percentual oficial apurado contra a meta.
+
+Reinstalação confirmada por resposta bem-sucedida da API para as duas skills
+(`validation_errors: []`).
+
+### 21.1. Arquivos/skills alterados nesta fase
+
+| Item | Alteração |
+|---|---|
+| `local/installed-reference/cgov-avaliar-entrega/SKILL.md` | Promovido de espelho de leitura a fonte de trabalho; Fase 2 e Notas Internas corrigidas (A-01, A-02) |
+| `local/installed-reference/cgov-registro-execucao/SKILL.md` | Promovido de espelho de leitura a fonte de trabalho; Fase 2, template e Notas Internas corrigidos (A-03) |
+| `cgov-avaliar-entrega` (skill instalada) | Reinstalada via `save_skill` (`overwrite: true`) |
+| `cgov-registro-execucao` (skill instalada) | Reinstalada via `save_skill` (`overwrite: true`) |
+
+## 22. Instalação de `cgov-transcrever-normativos` (30/08/2026)
+
+**Contexto.** A skill estava pronta e validada na fonte desde 29/08/2026
+(Decisão 33, Seção 19), mas ainda não instalada no Claude/Cowork — pendência
+nº 21. Como se trata de uma decisão de escopo (instalar ou não uma skill de
+manutenção do acervo normativo nesta superfície), e não apenas técnica, foi
+perguntado ao Coordenador antes de agir.
+
+**Decisão preliminar de escopo.** Antes da instalação, o Coordenador foi
+informado de duas limitações técnicas da skill nesta superfície:
+1. Ela referencia os 3 scripts auxiliares (`inventory_normative_sources.py`,
+   `qa_transcription.py`, `ocr_windows.ps1`) por caminho relativo dentro deste
+   repositório (`skills/thematic/cgov-transcrever-normativos/scripts/`).
+   `save_skill` grava a skill **a nível de conta**, não de projeto, e não tem
+   parâmetro para anexar arquivos auxiliares — confirmado pela resposta da
+   chamada (`skill_directory: null`, nenhum arquivo além do `SKILL.md`
+   propriamente dito). Os scripts só são alcançáveis quando a sessão tem esta
+   pasta do projeto montada — ou seja, a skill funciona plenamente apenas em
+   sessões do Cowork deste projeto (`cgov-geral-v1`).
+2. O passo de OCR indicado para Windows usa PowerShell (`ocr_windows.ps1`),
+   que não roda no sandbox Linux do Cowork. O próprio texto da skill já prevê
+   essa situação ("se a capacidade de PDF disponível no ambiente oferecer
+   renderização ou OCR, ela pode ser usada") — nesta superfície, a extração
+   direta e a capacidade de leitura de PDF do próprio ambiente substituem o
+   script PowerShell.
+
+O Coordenador confirmou instalar mesmo assim, ciente das dessas duas
+limitações.
+
+**Decisão 37 — instalação de `cgov-transcrever-normativos`.** A skill foi
+instalada via `save_skill` (sem `overwrite`, criação nova), com o `name`,
+`description` e corpo de instruções idênticos, caractere a caractere, à fonte
+em `skills/thematic/cgov-transcrever-normativos/SKILL.md`. Resposta da API sem
+erros de validação (`validation_errors: []`).
+
+**Verificação.**
+- *Acionamento correto:* os 16 casos de `evals/trigger_eval.json` foram
+  conferidos manualmente (sem corredor automatizado, conforme `CLAUDE.md`)
+  contra a `description` instalada — as 8 consultas que deveriam acionar a
+  skill (pedidos de OCR/transcrição de atos normativos) e as 8 que não deveriam
+  (resumo, comparação de versões, redação de NT, pesquisa na internet, análise
+  jurídica, PDF não normativo) bateram com o `should_trigger` esperado em
+  todos os casos.
+- *Scripts executáveis a partir do caminho montado:* `inventory_normative_sources.py`
+  e `qa_transcription.py` foram executados via Bash a partir de
+  `skills/thematic/cgov-transcrever-normativos/scripts/` dentro da pasta
+  montada do projeto — ambos rodaram sem erro.
+- *Caso real do acervo:* o inventário mostrou **0 PDFs pendentes de
+  transcrição** (27 PDFs, 25 pareados, 2 fora do escopo de ato normativo, 3
+  `.md` órfãos) — não há, hoje, um PDF normativo real ainda sem par para uma
+  transcrição nova de ponta a ponta. Em vez disso, `qa_transcription.py` foi
+  executado sobre um par PDF/Markdown real já existente no acervo (Decreto
+  nº 9.203/2017), como verificação de que a barreira de qualidade funciona
+  com dados reais: `"ok": true`, sem erros nem avisos, 32 artigos detectados,
+  hashes SHA-256 do PDF e do Markdown calculados corretamente.
+
+**Espelho em `local/installed-reference/`.** Não foi criado um espelho para
+esta skill. Diferentemente de `cgov-avaliar-entrega` e `cgov-registro-execucao`
+(Seção 21) — que não têm fonte canônica no repositório e por isso dependem do
+espelho para qualquer auditoria —, `cgov-transcrever-normativos` já tem fonte
+canônica em `skills/thematic/`, no mesmo padrão das outras 5 skills temáticas
+do Art. 37 (`cgov-gestao-riscos`, `cgov-air-arr`, `cgov-cadeia-valor`,
+`cgov-regimento-interno`, `cgov-pgr`), nenhuma das quais tem espelho em
+`local/installed-reference/` — conforme a própria distinção de papéis da
+Seção 3 do `CLAUDE.md`. Criar um espelho aqui duplicaria, sem necessidade, o
+que já é rastreável na fonte. A paridade fonte↔instalado desta rodada está
+garantida porque a instalação usou o conteúdo da fonte sem qualquer edição.
+
+### 22.1. Arquivos/skills alterados nesta fase
+
+| Item | Alteração |
+|---|---|
+| `cgov-transcrever-normativos` (skill de conta) | Instalada via `save_skill`, conteúdo idêntico à fonte em `skills/thematic/` |
+
+## 23. Criação e instalação de `cgov-qcf` — Art. 37, V (30/08/2026)
+
+**Contexto.** O inciso V (Quadro Demonstrativo dos Cargos e Funções
+Comissionadas Executivas) era o único dos 10 incisos do parágrafo único do
+Art. 37 ainda sem skill dedicada — pendência nº 7, aberta desde a fase 5
+(05/07/2026). Por ser um tema mais estreito e menos recorrente que os
+demais eixos, a criação dependia de decisão explícita do Coordenador sobre
+se valia a pena. Perguntado, o Coordenador confirmou criar a skill.
+
+**Pesquisa normativa prévia (antes de redigir a skill).** Antes de escrever
+qualquer instrução, foi levantada a base normativa real do QCF do ICMBio:
+
+- O texto verificado do Art. 37, V (`local/normative-sources/20251211_Art_37_Portaria_5592-2025_texto_verificado.md`)
+  mostra que o verbo do dispositivo é **"coordenar a elaboração e
+  consolidação das propostas de adequação"** do QCF — não aprovar nem editar
+  o Quadro; a CGOV consolida propostas, a decisão final é do Executivo.
+- O acervo já continha, transcrito e verificado desde 29/08/2026, o
+  **Decreto nº 12.258, de 25/11/2024** — que aprova a Estrutura Regimental
+  **e** o Quadro Demonstrativo dos CCE/FCE do ICMBio (Anexos I a IV) —, fonte
+  primária direta para a skill.
+- Duas normas citadas pelo próprio Decreto nº 12.258/2024 (Lei nº 14.204/2021
+  e Decreto nº 10.829/2021) foram verificadas nesta rodada por consulta
+  direta ao Planalto (`planalto.gov.br`), confirmando: a Lei nº 14.204/2021
+  instituiu os CCE/FCE e extinguiu o DAS e a FCPE, disciplinando
+  transformação (art. 6º geral, art. 7º específico para CCE/FCE) e critérios
+  de ocupação; o Decreto nº 10.829/2021 é o regulamento dessa Lei.
+  Uma terceira norma citada (Decreto nº 9.739/2019) **não** foi verificada
+  em texto integral — a skill cita apenas o que o próprio Decreto
+  nº 12.258/2024 já atesta sobre ela, com ⚠️ explícito sobre o limite dessa
+  verificação.
+- `cgov-regimento-interno` (instalada em 04/08/2026) já antecipava esta
+  lacuna — seu texto já instruía "acionar também o processo de atualização
+  do QCF (Art. 37, V)" sempre que uma mudança de competência tivesse impacto
+  em cargos. `cgov-qcf` foi desenhada como a contraparte dessa integração.
+
+**Decisão 38 — criação e instalação de `cgov-qcf`.** Escrita a fonte em
+`skills/thematic/cgov-qcf/SKILL.md`, seguindo o mesmo padrão das 5 skills
+temáticas existentes (base normativa tabelada, fases numeradas, regras
+transversais). Estrutura da skill: diagnóstico do gatilho (Fase 1);
+consolidação de propostas de múltiplas unidades, já que o inciso V fala em
+"propostas" no plural (Fase 2); estruturação técnica do quadro no mesmo
+formato tabular do Anexo II do Decreto nº 12.258/2024 (Fase 3); distinção
+entre alteração que exige novo Decreto e a que cabe ato inferior a decreto —
+com base no próprio Art. 4º do Decreto nº 12.258/2024 (Fase 4); articulação
+obrigatória com `cgov-regimento-interno` (Fase 5); e entrega documentada
+(Fase 6). Regras transversais incluem a desambiguação QCF × DFT (Art. 37,
+V × VI — `cgov-cadeia-valor`), no mesmo espírito das desambiguações já
+registradas para PGR/PGRI/PGD.
+
+A `description` inicial (1.182 caracteres) excedeu o limite de 1.024
+caracteres já registrado como armadilha conhecida (Decisão 9, Seção 10.3) —
+foi condensada para 938 caracteres antes da instalação, preservando todos os
+gatilhos de acionamento e a nota de integração com `cgov-regimento-interno`.
+
+Criados também `skills/thematic/cgov-qcf/evals/trigger_eval.json` (16 casos,
+8 positivos e 8 negativos, incluindo casos negativos específicos para QCF ×
+RI e QCF × DFT) e instalada a skill via `save_skill` (criação nova, sem
+`overwrite`). Resposta da API sem erros de validação
+(`validation_errors: []`).
+
+**Verificação.** Os 16 casos de `trigger_eval.json` foram conferidos
+manualmente (sem corredor automatizado, conforme `CLAUDE.md`) contra a
+`description` instalada (938 caracteres) — todos bateram com o
+`should_trigger` esperado, incluindo os casos negativos que testam a
+fronteira com `cgov-regimento-interno` (minuta de alteração do RI, sem menção
+a QCF) e com `cgov-cadeia-valor` (DFT/dimensionamento de força de trabalho).
+
+**Sem espelho em `local/installed-reference/`.** Mesmo padrão da Decisão 37
+(Seção 22): `cgov-qcf` tem fonte canônica em `skills/thematic/`, como as
+outras 5 skills temáticas do Art. 37, nenhuma das quais tem espelho de
+leitura em `local/installed-reference/`.
+
+**Cobertura resultante.** Os 10 incisos do parágrafo único do Art. 37 passam
+a ter skill dedicada — cobertura completa.
+
+### 23.1. Arquivos/skills alterados nesta fase
+
+| Item | Alteração |
+|---|---|
+| `skills/thematic/cgov-qcf/SKILL.md` | Criado — fonte canônica da nova skill |
+| `skills/thematic/cgov-qcf/evals/trigger_eval.json` | Criado — 16 casos de acionamento |
+| `cgov-qcf` (skill de conta) | Instalada via `save_skill` (criação nova) |
+
+## 24. Desambiguação `cgov-gestao-riscos` × S10 do `pgd-agente-icmbio` (30/08/2026)
+
+**Contexto.** Risco de confusão de escopo análogo ao já resolvido para
+PGR/PGRI/PGD (Decisão 9 e outras): o componente **S10** do assistente irmão
+`pgd-agente-icmbio` trata risco de **projeto/entrega** (dependências e
+restrições de uma entrega específica do Plano de Entregas), enquanto
+`cgov-gestao-riscos` trata risco **institucional** no sentido do Art. 37, IX,
+da Portaria ICMBio nº 5.592/2025 e da PGRI (Portaria ICMBio nº 255/2020,
+metodologia da Portaria ICMBio nº 975/2021). São objetos diferentes — a
+Metodologia da Portaria nº 975/2021 não foi desenhada para avaliar risco de
+atraso de uma entrega individual —, mas a palavra "risco" sozinha convida à
+confusão, sobretudo porque o Plano de Entregas também é tema regular desta
+suíte (`cgov-elaborar-entrega`, `cgov-avaliar-entrega`,
+`cgov-registro-execucao`).
+
+**Decisão 39 — desambiguação de escopo `cgov-gestao-riscos` × S10 do
+`pgd-agente-icmbio`.**
+
+1. **`description` (fonte em `skills/thematic/cgov-gestao-riscos/SKILL.md`).**
+   Reescrita para incluir a frase "IMPORTANTE: trata do risco institucional
+   (Art. 37-IX) — não do risco de projeto/entrega do Plano de Entregas, que é
+   o S10 do pgd-agente-icmbio (projeto irmão)", no mesmo modelo já usado em
+   `cgov-pgr`. Como a descrição já estava próxima do limite de 1.024
+   caracteres (Decisão 9, Seção 10.3), foi necessário condensar outros trechos
+   (remover "fielmente", enxugar o parêntese das Tabelas 1-13, remover "ISO
+   31000" como palavra-gatilho explícita, encurtar a frase final sobre risco
+   fora da sintaxe oficial) para caber a nova frase — texto final com 1.006
+   caracteres, verificado por contagem programática antes da instalação.
+2. **Corpo da skill.** Inserido, logo após o bloco `> **IMPORTANTE**` já
+   existente sobre PGR/PGRI/PGD (seção "CONVENÇÃO DE SIGLAS"), um novo bloco
+   `> **IMPORTANTE — risco institucional × risco de projeto/entrega.**`
+   explicando a distinção com mais detalhe do que cabe na `description`:
+   define o que é risco institucional nesta skill, afirma explicitamente que
+   ela **não** trata de risco de projeto/entrega, nomeia o S10 do
+   `pgd-agente-icmbio` como o objeto correto para esse segundo caso, e
+   instrui a esclarecer a distinção e direcionar ao S10 em vez de aplicar a
+   Metodologia da Portaria nº 975/2021 a um objeto que ela não foi desenhada
+   para tratar.
+3. **Evals.** `skills/thematic/cgov-gestao-riscos/evals/trigger_eval.json`
+   reconferido caso a caso contra a nova `description` (os 20 casos
+   pré-existentes continuam corretos) e ampliado com 2 casos negativos novos,
+   específicos para a fronteira S10: uma entrega do Plano de Entregas com
+   risco de atraso por dependência externa, e riscos/restrições de uma
+   entrega específica para o Plano de Trabalho Individual — ambos
+   `should_trigger: false`, total de 22 casos.
+4. **Reinstalação.** `cgov-gestao-riscos` reinstalada via `save_skill`
+   (`overwrite: true`), conteúdo idêntico à fonte atualizada. Resposta da API
+   sem erros de validação (`validation_errors: []`).
+
+**Pendência remanescente — fora do escopo de edição direta desta sessão.** O
+passo 2 do plano (`local/PLANO_correcao_cgov-geral-v1_2026-08-30.md`, item 6)
+previa também registrar a mesma distinção do lado do `pgd-agente-icmbio` —
+por exemplo em `docs/projeto-v6/03-catalogo-skills-s01-s24.md` ou numa ficha
+`SKILL_S10.md` equivalente. Esse repositório está fora do escopo de edição
+desta sessão (é outro projeto, com suas próprias convenções); fica como
+**sugestão ao Coordenador**, não como ação executada aqui.
+
+### 24.1. Arquivos/skills alterados nesta fase
+
+| Item | Alteração |
+|---|---|
+| `skills/thematic/cgov-gestao-riscos/SKILL.md` | `description` reescrita (1.006 caracteres) e novo bloco `IMPORTANTE` inserido no corpo |
+| `skills/thematic/cgov-gestao-riscos/evals/trigger_eval.json` | Ampliado de 20 para 22 casos (2 novos negativos, fronteira S10) |
+| `cgov-gestao-riscos` (skill de conta) | Reinstalada via `save_skill` (`overwrite: true`) |
+
+## 25. Pendências abertas (para continuidade)
 
 1. ~~Validação jurídica pessoal do texto do Art. 37~~ — ✅ **Resolvida em
    05/07/2026** (Seção 7 acima).
@@ -686,8 +1150,10 @@ que aparecem em seções anteriores deste registro são históricos.
    `04_fontes_normativas` (ver limitação de ferramenta, Seção 7).
 6. ~~Instalar as 5 novas skills de `05_novas_skills_propostas/`~~ — ✅
    **Concluída em 04/08/2026** (Seção 10.3 acima).
-7. Avaliar a oportunidade de criar `cgov-qcf` (Art. 37, V — Quadro de Cargos e
-   Funções Comissionadas), único inciso ainda sem skill dedicada.
+7. ~~Avaliar a oportunidade de criar `cgov-qcf` (Art. 37, V — Quadro de Cargos e
+   Funções Comissionadas), único inciso ainda sem skill dedicada.~~ — ✅
+   **Concluída em 30/08/2026** (Decisão 38, Seção 23): skill criada e
+   instalada. Cobertura do Art. 37 passa a ser completa (10 de 10 incisos).
 8. ~~Resolver a divergência `DIPLAN` × `GABIN`~~ — ✅ **Resolvida em 04/08/2026**
    (Decisão 10): `Nota Técnica nº [#]/[ano]/CGOV/CGGE/GABIN/ICMBio`.
 9. ~~Anexar a `04_fontes_normativas/` o texto das portarias internas~~ — ✅
@@ -705,9 +1171,12 @@ que aparecem em seções anteriores deste registro são históricos.
     referida no art. 25 da Portaria nº 1.572/2023).
 14. ~~Reescrever e reinstalar as 7 skills da suíte `cgov-nt`~~ — ✅
     **Concluída em 05/08/2026** (Decisão 17, Seção 13).
-15. **Novo upload, com camada de texto**, do Código de Ética (Portaria
-    nº 411/2020), da Portaria MMA nº 296/2021 e da Portaria ICMBio nº 2.917/2026
-    — os três são digitalizações sem texto e não podem ser citados.
+15. ~~Obter versão legível do Código de Ética (Portaria nº 411/2020), da
+    Portaria MMA nº 296/2021 e da Portaria ICMBio nº 2.917/2026~~ — ✅
+    **Resolvida em 29/08/2026 por transcrição OCR revisada em Markdown.** Os
+    PDFs continuam sendo digitalizações sem camada textual confiável, mas os
+    arquivos `.md` locais correspondentes passaram a ser legíveis por máquina
+    e citáveis após conferência com o PDF.
 16. **Definir institucionalmente o foro** de apresentação dos resultados de
     tratamento de risco, diante da revogação da PGE e da não recriação da RAE
     (Seção 14.2). Candidato natural: o CTGRIC, do qual a CGOV é
@@ -716,3 +1185,63 @@ que aparecem em seções anteriores deste registro são históricos.
     desatualizadas: à PGE revogada (RAE) e à Portaria nº 923/2020 (Integra+).
 18. Depositar a **IN ICMBio nº 14/2025** (regras do PGD) e a **Portaria GM/MMA
     nº 1.012/2024** (Acordo de Gestão), ausentes do acervo.
+19. **Revisar o núcleo `analista-governanca.md` (v4.0)** linha a linha antes de
+    uso em produção — condensação de um documento validado por várias
+    rodadas, feita em 29/08/2026 sem segunda verificação humana.
+20. **Decidir o destino de `analista-processos-sei.md`** frente à sobreposição
+    com `escritorio-cgov.md` e a própria suíte de skills dentro do Claude
+    Cowork (fundir, manter separado ou aposentar).
+21. ~~Instalar `cgov-transcrever-normativos` no Claude/Cowork~~ — ✅
+    **Concluída em 30/08/2026** (Decisão 37, Seção 22). Instalada via
+    `save_skill`; scripts auxiliares permanecem alcançáveis apenas em sessões
+    deste projeto (caminho relativo à pasta montada), e o OCR usa a
+    capacidade de PDF do próprio ambiente Cowork em vez do script PowerShell.
+22. **Confirmar a sincronização das Instruções do Projeto Cowork** com
+    `docs/system-instructions/escritorio-cgov.md` (Decisão 35, Seção 20) — o
+    Coordenador colou o conteúdo, mas a correção de
+    `local/installed-reference/` foi feita depois; abrir uma conversa nova
+    neste projeto para conferir, ou colar novamente o texto já corrigido.
+23. ~~Desambiguar `cgov-gestao-riscos` × S10 do `pgd-agente-icmbio`~~ — ✅
+    **Concluída em 30/08/2026** (Decisão 39, Seção 24), no lado
+    `cgov-geral-v1`. Fica como **sugestão ao Coordenador** replicar a mesma
+    distinção do lado do `pgd-agente-icmbio` (fora do escopo de edição desta
+    sessão).
+
+## 26. Saneamento e instalação das skills temáticas no Codex (25/09/2026)
+
+**Contexto.** A documentação vigente do Codex usa `.agents/skills` para
+skills de projeto e aceita no frontmatter de `SKILL.md` as propriedades
+funcionais da skill, como `name`, `description` e `metadata`. Seis fontes
+temáticas ainda mantinham propriedades superiores que descreviam o estado
+histórico da instalação no Claude (`instalado_em`, `status` e, em dois casos,
+`revisao`). Esses campos não orientavam a execução e impediam a validação pelo
+`quick_validate.py` atual. O espelho local do Codex também estava incompleto:
+`cgov-qcf` não existia e as demais instalações não preservavam avaliações e
+scripts auxiliares.
+
+**Decisão 40 — saneamento de frontmatter e sincronização do espelho Codex.**
+
+1. Remover do nível superior do frontmatter de `cgov-air-arr`,
+   `cgov-cadeia-valor`, `cgov-gestao-riscos`, `cgov-pgr`, `cgov-qcf` e
+   `cgov-regimento-interno` os campos históricos `instalado_em`, `status` e,
+   onde existente, `revisao`, preservando integralmente `name`, `description`
+   e o corpo operacional.
+2. Em `cgov-transcrever-normativos`, preservar o bloco `metadata` e
+   `criado_em: "2026-08-29"`, mas reduzir `status` para `"fonte canônica"`,
+   retirando a afirmação circunstancial de que o espelho da Antigravity estava
+   sincronizado.
+3. Sincronizar os sete pacotes completos em `.agents/skills`, incluindo os
+   arquivos de avaliação e os três scripts de
+   `cgov-transcrever-normativos`. Não copiar `scripts/__pycache__`, por ser
+   artefato local gerado pelo Python.
+4. Preservar as alterações locais já existentes de `cgov-gestao-riscos` e
+   `cgov-regimento-interno`, e usar as fontes locais ainda não rastreadas de
+   `cgov-qcf` e `cgov-transcrever-normativos`, sem substituí-las por cópias de
+   caches externos.
+5. Validar fonte e espelho por estrutura, tamanho e SHA-256. Os sete pacotes
+   passaram no `quick_validate.py`; os JSON de avaliação e scripts auxiliares
+   passaram nas verificações de sintaxe.
+
+O estado anterior foi preservado em backup temporário fora do repositório. A
+pasta `.agents/` permanece ignorada pelo Git e funciona como espelho local; as
+fontes canônicas continuam em `skills/thematic/`.

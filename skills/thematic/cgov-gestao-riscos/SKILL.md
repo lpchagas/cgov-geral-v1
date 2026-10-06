@@ -2,29 +2,19 @@
 name: cgov-gestao-riscos
 description: >
   Suporte metodológico à gestão de riscos institucionais da CGOV/ICMBio (Art.
-  37, parágrafo único, IX, da Portaria ICMBio nº 5.592/2025), aplicando
-  fielmente a Metodologia da Portaria ICMBio nº 975/2021 — as 7 etapas (4.1 a
-  4.7), a sintaxe obrigatória de descrição do risco e as Tabelas 1 a 13
-  (categorias, escalas de probabilidade e impacto, matriz Impacto ×
-  Probabilidade, matriz de classificação Baixo/Médio/Alto/Extremo, eficácia
-  dos controles e multiplicadores do risco residual, priorização, estratégias
-  e plano 5W2H). Use ao invocar /cgov-gestao-riscos, GESTAO_RISCOS, "mapear
-  riscos", "matriz de riscos", "risco inerente", "risco residual", "risco
-  extremo", "evento de risco", "eficácia do controle", "plano de tratamento",
-  "CTGRIC", "SITAI", "PGRI", "Portaria 975", "Portaria 255", "ISO 31000",
-  "identificar/avaliar/tratar risco". Acione também quando o usuário descrever
-  um risco sem a sintaxe oficial. PGRI = riscos; PGR (Programa de Gestão para
-  Resultados) é a skill cgov-pgr.
-instalado_em: 2026-08-04
-status: instalada na conta Claude (Customize -> Skills)
-revisao: >
-  04/08/2026 — reescrita integral a partir do texto extraído da Portaria
-  ICMBio nº 975/2021 (nível 'Extremo', máscara de classificação,
-  multiplicadores de eficácia, estratégias Mitigar/Compartilhar/Evitar/Aceitar).
-  14/08/2026 — incorporada a Portaria nº 4.529/2025 (CTGRIC, com a CGOV como
-  Secretaria-Executiva); atualizada a norma vigente do Integra+ para a
-  Portaria nº 253/2026; registrada a revogação da PGE nº 768/2020 pelo art. 12
-  da Portaria nº 1.164/2025 e a consequente prejudicialidade da remissão à RAE.
+  37, parágrafo único, IX, da Portaria ICMBio nº 5.592/2025), aplicando a
+  Metodologia da Portaria ICMBio nº 975/2021 — as 7 etapas (4.1 a 4.7), a
+  sintaxe obrigatória do risco e as Tabelas 1 a 13 (categorias, escalas,
+  matrizes de impacto x probabilidade e de classificação, eficácia de
+  controles, priorização, estratégias e plano 5W2H). IMPORTANTE: trata do
+  risco institucional (Art. 37-IX) — não do risco de projeto/entrega do
+  Plano de Entregas, que é o S10 do pgd-agente-icmbio (projeto irmão). Use ao
+  invocar /cgov-gestao-riscos, GESTAO_RISCOS, "mapear riscos", "matriz de
+  riscos", "risco inerente", "risco residual", "risco extremo", "evento de
+  risco", "eficácia do controle", "plano de tratamento", "CTGRIC", "SITAI",
+  "PGRI", "Portaria 975", "Portaria 255", "identificar/avaliar/tratar risco".
+  Acione também se o risco vier descrito fora dessa sintaxe. PGRI = riscos;
+  PGR (Programa de Gestão para Resultados) é a skill cgov-pgr.
 ---
 
 # cgov-gestao-riscos — Gestão de Riscos Institucionais (CGOV/ICMBio)
@@ -49,6 +39,21 @@ aplicando a **PGRI** (Portaria ICMBio nº 255/2020) e, sobretudo, a
 > instrumento de riscos é a **PGRI**. A sigla PGR pertence exclusivamente ao
 > Programa de Gestão para Resultados. Se o usuário usar PGR querendo dizer
 > riscos, corrija-o de forma breve e siga adiante.
+
+> **IMPORTANTE — risco institucional × risco de projeto/entrega.** Esta
+> skill trata exclusivamente do **risco institucional** no sentido do
+> Art. 37, IX, da Portaria ICMBio nº 5.592/2025 e da PGRI (Portaria ICMBio
+> nº 255/2020, metodologia da Portaria ICMBio nº 975/2021) — riscos que
+> ameaçam objetivos estratégicos e processos organizacionais do ICMBio como
+> um todo. Ela **não** trata do **risco de projeto/entrega** — dependências,
+> restrições e ameaças à execução de uma entrega específica do Plano de
+> Entregas —, que é o objeto do componente **S10** do assistente
+> `pgd-agente-icmbio`, um projeto irmão fora deste repositório. Os dois usam
+> a palavra "risco" mas respondem a lógicas e formulários diferentes: se o
+> usuário perguntar sobre risco de atraso ou de inviabilidade de uma entrega
+> específica do Plano de Entregas (não um risco institucional amplo),
+> esclareça a distinção e direcione ao S10, em vez de aplicar a Metodologia
+> da Portaria nº 975/2021 a um objeto que ela não foi desenhada para tratar.
 
 ---
 

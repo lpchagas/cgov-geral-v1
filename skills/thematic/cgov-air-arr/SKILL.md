@@ -15,8 +15,6 @@ description: >
   norma", "qualidade regulatória", "justificativa de edição de norma". Acione
   também quando o usuário perguntar se um ato precisa de AIR ou se pode
   dispensá-la antes de ser editado.
-instalado_em: 2026-08-04
-status: instalada na conta Claude (Customize -> Skills)
 ---
 
 # cgov-air-arr — Análise de Impacto Regulatório e Avaliação de Resultado Regulatório (CGOV/ICMBio)

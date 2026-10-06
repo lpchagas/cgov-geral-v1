@@ -15,13 +15,6 @@ description: >
   "consultoria interna", "consultor interno PGR", "multiplicador PGR",
   "laboratório de inovação", "rede de multiplicadores", "inovação
   institucional", "relatório de resultados do PGR", "iniciativa PGR".
-instalado_em: 2026-08-04
-status: instalada na conta Claude (Customize -> Skills)
-revisao: >
-  04/08/2026 — reescrita a partir do texto integral da Portaria nº 1.572/2023,
-  agora disponível no projeto. A versão anterior descrevia dois eixos ("Gestão
-  por Resultados" e "Inovação Institucional") e um arcabouço de indicadores,
-  metas e painel que não constam da norma.
 ---
 
 # cgov-pgr — Programa de Gestão para Resultados e Inovação (CGOV/ICMBio)

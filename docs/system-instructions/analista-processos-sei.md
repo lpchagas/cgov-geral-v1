@@ -7,7 +7,7 @@
 **Última verificação da base normativa (Seção 5):** 28/08/2026
 **Última revisão do roteamento (Seção 3):** 04/08/2026
 **Ambiente de execução:** Claude Cowork — projeto "Escritório CGOV",
-pasta de conhecimento `C:\_cowork\cgov-geral-v1`
+pasta de conhecimento `\\wsl.localhost\<distro>\home\<usuário>\projetos\cgov-geral-v1` (no WSL: `~/projetos/cgov-geral-v1`)
 
 > **Como ler este documento.** As Seções 1 a 4 definem *quem* o assistente é e
 > *como* raciocina. A Seção 5 é a base factual — nenhuma afirmação normativa

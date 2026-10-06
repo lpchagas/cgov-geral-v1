@@ -1,0 +1,66 @@
+[
+  {
+    "query": "precisamos remanejar dois cargos comissionados de uma diretoria pra outra, como formalizamos isso no QCF?",
+    "should_trigger": true
+  },
+  {
+    "query": "/cgov-qcf quero converter uma FCE 1.07 em CCE do mesmo nível, isso precisa de decreto?",
+    "should_trigger": true
+  },
+  {
+    "query": "QCF - a coordenação nova que vamos criar no regimento vai precisar de um cargo de chefia, como incluímos isso no quadro de cargos?",
+    "should_trigger": true
+  },
+  {
+    "query": "quantos CCE e FCE o ICMBio tem hoje por unidade, segundo o decreto de estrutura regimental?",
+    "should_trigger": true
+  },
+  {
+    "query": "a gerência regional pediu mais uma função comissionada de chefia de divisão, isso cabe por ato interno ou precisa subir pra decreto?",
+    "should_trigger": true
+  },
+  {
+    "query": "preciso consolidar os pedidos de três diretorias diferentes pra propor a atualização do quadro demonstrativo de cargos em comissão",
+    "should_trigger": true
+  },
+  {
+    "query": "cargos em comissão - qual a diferença entre uma permuta de CCE e FCE e uma transformação que precisa de decreto novo?",
+    "should_trigger": true
+  },
+  {
+    "query": "funções de confiança - a diretoria quer saber o impacto orçamentário de reclassificar um FCE 1.05 pra FCE 1.07",
+    "should_trigger": true
+  },
+  {
+    "query": "quero elaborar uma nota técnica sobre a atualização da política de governança institucional",
+    "should_trigger": false
+  },
+  {
+    "query": "vamos extinguir uma coordenação e redistribuir as competências dela entre duas outras, como eu estruturo a minuta de alteração do RI?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso saber quantos servidores efetivos temos por unidade pra calcular o dimensionamento da força de trabalho",
+    "should_trigger": false
+  },
+  {
+    "query": "quero modelar o processo de emissão de autorização de pesquisa usando SIPOC, quais são as entradas e saídas principais?",
+    "should_trigger": false
+  },
+  {
+    "query": "identificamos um risco de sobrecarga de trabalho numa coordenação, precisa entrar na matriz de riscos institucionais?",
+    "should_trigger": false
+  },
+  {
+    "query": "um servidor novo vai entrar na nossa coordenação semana que vem, como eu organizo o processo de integração dele?",
+    "should_trigger": false
+  },
+  {
+    "query": "preciso atualizar os indicadores do PGR pro relatório semestral, tem uns que ficaram amarelos",
+    "should_trigger": false
+  },
+  {
+    "query": "a diretoria quer editar uma portaria nova e perguntou se precisa fazer AIR antes",
+    "should_trigger": false
+  }
+]

@@ -481,5 +481,5 @@ O arquivo PDF completo da Portaria nº 5.592/2025 não pôde ser copiado para
 disponíveis nesta sessão só permitem gravar **conteúdo em texto**, não copiar
 arquivos binários de um local para outro no mesmo computador. O arquivo
 original permanece em
-`C:\Users\leand\My Drive\CGOV\CGOV_Normativas\20251211_Portaria ICMBio 5.592_Regimento Interno.pdf`;
+`<Google Drive>\CGOV\CGOV_Normativas\20251211_Portaria ICMBio 5.592_Regimento Interno.pdf`;
 uma cópia manual (Ctrl+C/Ctrl+V) resolveria, se desejado.

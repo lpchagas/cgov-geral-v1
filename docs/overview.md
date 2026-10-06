@@ -16,7 +16,7 @@
 | Fontes normativas | `local/normative-sources` (local) + catálogo público | ✅ |
 | System Instructions independente | `docs/system-instructions/analista-governanca.md` | ✅ versão canônica v3 |
 | Catálogo normativo público | `docs/references/normative-catalog.md` | ✅ |
-| PDF completo da Portaria nº 5.592/2025 | Ainda apenas em `C:\Users\leand\My Drive\CGOV\CGOV_Normativas\` (não copiado — ver limitação na Seção 11.3 do relatório) | ⚠️ Cópia manual pendente, se desejada |
+| PDF completo da Portaria nº 5.592/2025 | Ainda apenas em `<Google Drive>\CGOV\CGOV_Normativas\` (não copiado — ver limitação na Seção 11.3 do relatório) | ⚠️ Cópia manual pendente, se desejada |
 | Skills temáticas do Art. 37 | Instaladas na conta Claude; código-fonte em `skills/thematic/` | ✅ |
 | System Instructions do Analista de Processos SEI | `docs/system-instructions/analista-processos-sei.md` | ✅ v7.2 |
 | Análises e produtos de skills por processo SEI | `local/analyses/SEI_[processo]_[apelido]/` | ✅ fora do Git |

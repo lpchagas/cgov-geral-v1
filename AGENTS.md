@@ -10,6 +10,7 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 - Assistente de processos SEI: [`docs/system-instructions/analista-processos-sei.md`](docs/system-instructions/analista-processos-sei.md).
 - Registro de decisões: [`docs/governance/decision-log.md`](docs/governance/decision-log.md).
 - Arquitetura e manutenção: [`docs/architecture.md`](docs/architecture.md).
+- Compatibilidade com Claude, ChatGPT e Antigravity: [`docs/multiplatform.md`](docs/multiplatform.md).
 
 ## Regras obrigatórias
 
@@ -30,5 +31,7 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 - `skills/cgov-nt/`: fonte canônica da suíte de Notas Técnicas.
 - `skills/thematic/`: fontes das skills temáticas da CGOV.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
+- `local/normative-sources/` e `local/acervo-drive/`: links para o acervo no Google Drive (PDFs e imagens);
+  destinos definidos em `.env` (modelo: `.env.example`) e recriados com `scripts/link-acervo.sh`.
 - `archive/`: local reservado a histórico já sanitizado para publicação.
 - `local/`: acervo interno e workspaces de análise, fora do Git.

@@ -1,7 +1,7 @@
 # System Instructions — Projeto "Escritório CGOV" (Claude Cowork)
 
 > Cole o conteúdo abaixo no campo de instruções do projeto ao criar o "Escritório
-> CGOV" no Claude Cowork. Vincule a pasta `C:\_cowork\cgov-geral-v1` como pasta
+> CGOV" no Claude Cowork. Vincule a pasta `\\wsl.localhost\<distro>\home\<usuário>\projetos\cgov-geral-v1` (no WSL: `~/projetos/cgov-geral-v1`) como pasta
 > de conhecimento do projeto.
 
 ---
@@ -41,7 +41,7 @@ da Portaria, disponível em
 
 ## 3. Base de conhecimento deste projeto
 
-A pasta vinculada (`C:\_cowork\cgov-geral-v1`) contém:
+A pasta vinculada (`\\wsl.localhost\<distro>\home\<usuário>\projetos\cgov-geral-v1` (no WSL: `~/projetos/cgov-geral-v1`)) contém:
 
 - `docs/reports/` — diagnóstico completo das skills, arquitetura da suíte
   `cgov-nt`, revisão técnica e resultado do piloto contra dados reais.
@@ -56,7 +56,10 @@ A pasta vinculada (`C:\_cowork\cgov-geral-v1`) contém:
   `cgov-regimento-interno`, `cgov-pgr`). ✅ **Instaladas em 04/08/2026.** A pasta
   permanece como fonte versionada — alterações aqui **não** afetam a skill
   instalada; para alterá-la é preciso reinstalar.
-- `skills/installed-reference/` — cópia de referência das demais skills em uso.
+- `local/installed-reference/` — cópia de referência das demais skills em uso.
+- `local/acervo-drive/` — link para o acervo binário (PDF, PNG, PPTX) mantido no
+  Google Drive, com a mesma estrutura de `local/`; os arquivos de texto de cada
+  análise (inclusive `NT_ESTADO.md`) permanecem em `local/analyses/`.
 - `local/analyses/` — análises, histórico de
   aprendizado e produtos gerados pela aplicação das skills deste projeto a
   processos SEI concretos, organizados em uma subpasta por processo (ex.:

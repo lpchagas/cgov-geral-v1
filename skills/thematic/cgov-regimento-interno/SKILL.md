@@ -8,15 +8,13 @@ description: >
   Orienta o diagnóstico de gatilho e impacto, a articulação interunidades, a
   redação da minuta de portaria de alteração, a hierarquia normativa, a
   legística e a submissão à PFE. Integra-se com cgov-auditoria-competencias,
-  cgov-comparar-versoes e cgov-saneamento-legistica. Use ao invocar /cgov-
-  regimento-interno, REGIMENTO_INTERNO, "atualizar o regimento", "alterar o
-  RI", "revisão do regimento interno", "Portaria 5.592", "Decreto de Estrutura
-  Regimental", "criação de unidade", "extinção de unidade", "mudança de
-  competência", "alterar artigo do regimento", "minuta de portaria de
-  alteração do RI". Acione também quando o usuário perguntar se uma mudança
-  organizacional exige atualização do RI.
-instalado_em: 2026-08-04
-status: instalada na conta Claude (Customize -> Skills)
+  cgov-comparar-versoes e cgov-saneamento-legistica. Use ao invocar
+  /cgov-regimento-interno, REGIMENTO_INTERNO, "atualizar o regimento",
+  "alterar o RI", "revisão do regimento interno", "Portaria 5.592", "Decreto
+  de Estrutura Regimental", "criação de unidade", "extinção de unidade",
+  "mudança de competência", "alterar artigo do regimento", "minuta de
+  portaria de alteração do RI". Acione também quando o usuário perguntar se
+  uma mudança organizacional exige atualização do RI.
 ---
 
 # cgov-regimento-interno — Coordenação da Atualização do Regimento Interno (CGOV/ICMBio)
