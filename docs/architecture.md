@@ -27,6 +27,13 @@ O estado de cada processo vive exclusivamente em
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |
 | `local/` | Processos, insumos e acervo local | Nunca adicionar ao Git. |
 
+## Fluxos de trabalho
+
+O desenvolvimento (Claude Code, este repositório) e a operação (Claude
+Cowork, pasta CGOV no Google Drive) são separados; a passagem de um para o
+outro é feita por `scripts/publicar-operacao.sh`. Ver
+[`fluxos-de-trabalho.md`](fluxos-de-trabalho.md).
+
 ## Multiplataforma
 
 Este projeto é operado a partir de mais de um assistente (Claude, ChatGPT,
@@ -38,5 +45,6 @@ conhecidas e as pendências de decisão estão em
 
 Editar uma skill em `skills/` não altera uma skill instalada em plataforma
 externa. Toda atualização requer: revisão do conteúdo, execução dos evals,
-reinstalação manual quando cabível e registro em
+publicação (`scripts/publicar-operacao.sh`), reinstalação manual quando
+cabível e registro em
 [`decision-log.md`](governance/decision-log.md).

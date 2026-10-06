@@ -8,7 +8,7 @@
 | Aplicativo / superfície | O que lê automaticamente | Mecanismo |
 |---|---|---|
 | **Claude Code** (este repositório aberto localmente) | `CLAUDE.md` (raiz) | Nativo. `CLAUDE.md` importa `AGENTS.md` via `@AGENTS.md` — Claude Code **não** lê `AGENTS.md` diretamente, só via esse import. |
-| **Claude Cowork** (projeto "Escritório CGOV") | Campo de instruções do projeto + pasta vinculada | Manual: colar `docs/system-instructions/escritorio-cgov.md` no campo de instruções; a suíte em `skills/` é instalada à parte via Customize → Skills. |
+| **Claude Cowork** (projeto "Escritório CGOV") | Campo de instruções do projeto + pasta vinculada | Manual: colar `docs/system-instructions/escritorio-cgov.md` no campo de instruções; pasta vinculada = pasta CGOV do Google Drive, não este repositório; skills instaladas via Customize → Skills a partir de `dist/skills/` (ver `fluxos-de-trabalho.md`). |
 | **Antigravity IDE** (repositório aberto como workspace) | `AGENTS.md` (regras) + `.agents/skills/*/SKILL.md` (skills) | Regras nativas desde a IDE 1.20.5. Skills: **resolvido em 29/08/2026** — ver Seção 2. |
 | **OpenAI Codex** (CLI, app desktop ou a superfície de código dentro do ChatGPT) | `AGENTS.md` + `.codex/config.toml` | Nativo — mesmo `AGENTS.md` que a Antigravity lê. Já antecipado: `.gitignore` já ignora `/.codex/`. Codex não tem conceito de "Skill"/`SKILL.md` — só arquivo de instruções. |
 | **ChatGPT desktop / Projects** (sem acesso a este repositório) | Nada automaticamente | Manual: colar o núcleo de `analista-governanca.md` no campo "Instructions" do Project + anexar os dois anexos à Library do Project — ver Seção 3. |
@@ -31,7 +31,7 @@ A Antigravity carrega skills de `<raiz-do-projeto>/.agents/skills/<nome>/SKILL.m
 | Arquivo | Tamanho original | Limite do campo Instructions de um Project no ChatGPT |
 |---|---|---|
 | `docs/system-instructions/analista-governanca.md` (v3.0) | 56.199 caracteres | **8.000 caracteres** (Custom Instructions global: 5.000, usuários pagos, desde jul/2026) |
-| `AGENTS.md` | 2.205 caracteres | Regras da Antigravity: 12.000 — folga confortável |
+| `AGENTS.md` | 2.353 caracteres | Regras da Antigravity: 12.000 — folga confortável |
 
 Colar o texto de 56.199 caracteres seria truncado pelo ChatGPT sem aviso, arriscando cortar justamente os guardrails do final do documento.
 

@@ -1245,3 +1245,41 @@ scripts auxiliares.
 O estado anterior foi preservado em backup temporário fora do repositório. A
 pasta `.agents/` permanece ignorada pelo Git e funciona como espelho local; as
 fontes canônicas continuam em `skills/thematic/`.
+
+## 27. Migração para o WSL e separação dos fluxos de desenvolvimento e operação (06/10/2026)
+
+**Contexto.** Com o repositório migrado para o WSL (`~/projetos/cgov-geral-v1`,
+commit `393471f`), decidiu-se usar o Claude Code para o desenvolvimento das
+skills e o Claude Cowork para o trabalho técnico e administrativo da CGOV.
+Verificou-se que o Windows não segue os links do repositório para o Google
+Drive quando acessa a pasta por `\\wsl.localhost\...`: vincular o repositório
+ao Cowork deixaria as fontes normativas inacessíveis, exigiria o WSL ligado e
+exporia o código-fonte das skills a edições do ambiente de produção.
+
+**Decisões.**
+
+1. A área operacional do Cowork passa a ser a pasta CGOV do Google Drive. Os
+   arquivos de texto das análises (427 arquivos) foram copiados para
+   `_acervo-escritorio-virtual/analyses/`, juntando-se aos binários já ali,
+   com conferência arquivo a arquivo; `local/analyses` passou a ser link para
+   essa pasta (`CGOV_ANALYSES` no `.env`).
+2. As skills continuam citando `local/analyses/` e `local/normative-sources/`;
+   as instruções do Cowork (`escritorio-cgov.md`, Seção 3) trazem um mapa de
+   caminhos para a estrutura do Drive. Tornar as skills neutras quanto ao
+   caminho fica como pendência.
+3. A passagem do desenvolvimento para a operação é feita por
+   `scripts/publicar-operacao.sh`, que publica somente o que está em commit:
+   pacotes `dist/skills/*.zip` para reinstalação e cópia só leitura de `docs/`
+   em `_acervo-escritorio-virtual/_referencia/`. O script também compara as
+   skills instaladas com a fonte.
+4. O retorno da operação para o desenvolvimento é feito por
+   `_acervo-escritorio-virtual/manutencao/PENDENCIAS.md`.
+5. `.claude/settings.json` passa a exigir confirmação para `git commit` e
+   `git push`, bloquear a edição das áreas operacionais e ocultar do modelo as
+   14 skills cuja fonte está no repositório, para que as sessões de
+   desenvolvimento trabalhem sobre a fonte.
+
+**Resultado.** A primeira verificação apontou como desatualizadas as versões
+instaladas de `cgov-cadeia-valor`, `cgov-pgr` e `cgov-regimento-interno`
+(caminhos antigos `REGISTRO_DECISOES.md` e `04_fontes_normativas/`). Instruções
+completas em [`docs/fluxos-de-trabalho.md`](../fluxos-de-trabalho.md).

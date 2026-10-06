@@ -3,8 +3,10 @@
 ## Convenções
 
 - Use nomes em minúsculas, separados por hífen, para skills e documentos novos.
-- Crie workspaces apenas em `local/analyses/` no formato
-  `SEI_<numero-sem-barras>_<apelido-curto>/`.
+- Workspaces de processos são criados pelo fluxo operacional (Cowork) em
+  `local/analyses/` (link para o Drive), no formato
+  `SEI_<numero-sem-barras>_<apelido-curto>/`. Testes de desenvolvimento vão
+  para `local/pilots/`.
 - Mantenha versões supersedidas em `archive/`; não as apague.
 
 ## Mudanças em skills
@@ -13,8 +15,9 @@
 2. Atualize ou execute os evals aplicáveis.
 3. Confirme que instruções, exemplos e caminhos ativos permanecem coerentes.
 4. Registre a decisão e o resultado em `docs/governance/decision-log.md`.
-5. Se a skill estiver instalada fora do repositório, reinstale-a e atualize o
-   snapshot de referência somente após confirmar a versão instalada.
+5. Após o commit, rode `bash scripts/publicar-operacao.sh` e reinstale no
+   Claude as skills que o script listar (pacotes em `dist/skills/`). Ver
+   [`docs/fluxos-de-trabalho.md`](docs/fluxos-de-trabalho.md).
 
 ## Espelho para a Antigravity — `.agents/skills/`
 

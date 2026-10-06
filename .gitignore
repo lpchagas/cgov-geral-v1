@@ -29,3 +29,9 @@ htmlcov/
 
 # Configuração local (caminhos do acervo no Drive)
 .env
+
+# Pacotes gerados por scripts/publicar-operacao.sh
+/dist/
+
+# Configuração pessoal do Claude Code (caminhos absolutos)
+/.claude/settings.local.json

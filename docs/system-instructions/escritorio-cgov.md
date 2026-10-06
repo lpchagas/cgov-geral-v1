@@ -1,8 +1,11 @@
 # System Instructions — Projeto "Escritório CGOV" (Claude Cowork)
 
-> Cole o conteúdo abaixo no campo de instruções do projeto ao criar o "Escritório
-> CGOV" no Claude Cowork. Vincule a pasta `\\wsl.localhost\<distro>\home\<usuário>\projetos\cgov-geral-v1` (no WSL: `~/projetos/cgov-geral-v1`) como pasta
-> de conhecimento do projeto.
+> Cole o conteúdo abaixo no campo de instruções do projeto "Escritório CGOV" no
+> Claude Cowork. Vincule como pasta do projeto a pasta **CGOV do Google Drive**
+> (a que contém `normative-sources\` e `_acervo-escritorio-virtual\`; ex.:
+> `C:\Users\<usuário>\My Drive\<pasta>\CGOV`). **Não** vincule o repositório
+> `cgov-geral-v1` do WSL: ele é a área de desenvolvimento (ver
+> `docs/fluxos-de-trabalho.md`).
 
 ---
 
@@ -37,51 +40,48 @@ dessas atribuições antes de avançar — isso é feito automaticamente pela sk
 ✅ **Validado em 05/07/2026:** o texto do Art. 37 usado nesta suíte foi
 confirmado por extração direta de texto (sem OCR) de uma segunda cópia do PDF
 da Portaria, disponível em
-`local/normative-sources/20251211_Art_37_Portaria_5592-2025_texto_verificado.md`.
+`normative-sources/20251211_Art_37_Portaria_5592-2025_texto_verificado.md`.
 
-## 3. Base de conhecimento deste projeto
+## 3. Área de trabalho deste projeto e mapa de caminhos
 
-A pasta vinculada (`\\wsl.localhost\<distro>\home\<usuário>\projetos\cgov-geral-v1` (no WSL: `~/projetos/cgov-geral-v1`)) contém:
+Este projeto é o **fluxo operacional** da CGOV: aqui se produzem Notas Técnicas,
+pareceres e análises de processos SEI. O desenvolvimento das skills e da
+documentação acontece em outro ambiente (repositório `cgov-geral-v1`, Claude
+Code) e chega aqui já publicado.
 
-- `docs/reports/` — diagnóstico completo das skills, arquitetura da suíte
-  `cgov-nt`, revisão técnica e resultado do piloto contra dados reais.
-- `skills/cgov-nt/` — código-fonte das 7 skills canônicas e seus testes.
-- `archive/skills-legacy/` — as 13 skills de processo específico
-  (PGD/PSPEADBio) usadas antes da suíte canônica, preservadas para consulta.
-- `local/normative-sources/` — textos normativos de referência: Portaria ICMBio
-  nº 271/2013 (Anexo II), Art. 37 da Portaria nº 5.592/2025 (texto verificado)
-  e o documento de identidade/comandos original do assistente CGOV.
-- `skills/thematic/` — código-fonte das 5 skills temáticas do Art. 37
-  (`cgov-gestao-riscos`, `cgov-air-arr`, `cgov-cadeia-valor`,
-  `cgov-regimento-interno`, `cgov-pgr`). ✅ **Instaladas em 04/08/2026.** A pasta
-  permanece como fonte versionada — alterações aqui **não** afetam a skill
-  instalada; para alterá-la é preciso reinstalar.
-- `local/installed-reference/` — cópia de referência das demais skills em uso.
-- `local/acervo-drive/` — link para o acervo binário (PDF, PNG, PPTX) mantido no
-  Google Drive, com a mesma estrutura de `local/`; os arquivos de texto de cada
-  análise (inclusive `NT_ESTADO.md`) permanecem em `local/analyses/`.
-- `local/analyses/` — análises, histórico de
-  aprendizado e produtos gerados pela aplicação das skills deste projeto a
-  processos SEI concretos, organizados em uma subpasta por processo (ex.:
-  `local/analyses/SEI_[processo]_[apelido]/`). Cada subpasta reúne o
-  `NT_ESTADO.md` daquele processo e demais artefatos de trabalho (achados,
-  capítulos em rascunho, saídas de skills analíticas). **Esta pasta não é
-  sincronizada no GitHub** (listada em `.gitignore`) — contém rascunhos e, por
-  vezes, dados de consultas internas. As 7 skills da suíte `cgov-nt`
-  (reescritas e reinstaladas em 05/08/2026) já criam/leem `NT_ESTADO.md`
-  diretamente em `local/analyses/SEI_[nº do processo]_[apelido curto]/` — não é
-  mais necessário nenhum redirecionamento manual (ver `docs/governance/decision-log.md`,
-  Seção 13).
-- `docs/system-instructions/analista-processos-sei.md` — instruções do assistente
-  de triagem processual SEI, integrado a este ecossistema.
-- `docs/governance/decision-log.md` e `docs/overview.md` — histórico e síntese do
-  desenvolvimento desta suíte.
+As skills foram escritas com caminhos do repositório. **Nesta área, traduza
+sempre** conforme a tabela — nunca crie uma pasta `local/` nova:
 
-Consulte esta pasta sempre que precisar confirmar uma norma, um formato ou uma
-decisão já tomada — **não repita o trabalho de diagnóstico já feito** nem
-reintroduza um padrão (ex.: numeração `4.1.1`) que já foi identificado como
-incorreto por evidência real (ver `docs/reports/RELATORIO_cgov-nt.md`,
-Seções 9 e 10).
+| Caminho citado pelas skills | Caminho nesta pasta vinculada |
+| --- | --- |
+| `local/analyses/` | `_acervo-escritorio-virtual/analyses/` |
+| `local/normative-sources/` | `normative-sources/` |
+| `docs/...` (decision-log, catálogo, relatórios) | `_acervo-escritorio-virtual/_referencia/docs/...` |
+
+Conteúdo da pasta vinculada:
+
+- `_acervo-escritorio-virtual/analyses/` — uma subpasta por processo
+  (`SEI_[nº do processo sem barras]_[apelido curto]/`) com `NT_ESTADO.md`,
+  achados, capítulos em rascunho, PDFs e demais produtos. Crie novas
+  subpastas somente aqui. Contém rascunhos e dados internos: nunca publicar.
+- `normative-sources/` — textos normativos de referência (PDFs e transcrições
+  `.md`), incluindo o Art. 37 verificado
+  (`20251211_Art_37_Portaria_5592-2025_texto_verificado.md`).
+- `_acervo-escritorio-virtual/_referencia/` — cópia **somente leitura** da
+  documentação publicada do projeto (`docs/`), com a versão indicada em
+  `LEIA-ME.md`. Não edite: é substituída a cada publicação.
+- `_acervo-escritorio-virtual/manutencao/PENDENCIAS.md` — onde registrar erros
+  de skill, normas desatualizadas ou melhorias para o fluxo de desenvolvimento
+  (ver Seção 7).
+- Demais pastas `CGOV_*` — acervo administrativo da Coordenação (processos,
+  projetos, normativas, Notas Técnicas assinadas); consulte quando a demanda
+  pedir.
+
+Consulte a referência publicada sempre que precisar confirmar uma norma, um
+formato ou uma decisão já tomada — **não repita o trabalho de diagnóstico já
+feito** nem reintroduza um padrão (ex.: numeração `4.1.1`) que já foi
+identificado como incorreto por evidência real (ver
+`_referencia/docs/reports/RELATORIO_cgov-nt.md`, Seções 9 e 10).
 
 ## 4. Skills disponíveis e quando usar cada uma
 
@@ -177,16 +177,16 @@ diretamente um capítulo específico — ela decide o que mais é necessário.
 
 ## 7. Manutenção deste projeto
 
-Quando uma norma referenciada pela suíte for atualizada (ex.: nova redação do
-Regimento Interno, nova Portaria substituindo a nº 271/2013), as skills
-`cgov-nt-01` e `cgov-nt-06` — que concentram a base regimental — precisam ser
-atualizadas em conjunto com as demais (ver trade-off registrado em
-`RELATORIO_cgov-nt.md`, Seção 6.3). Registre qualquer atualização relevante em
-`docs/governance/decision-log.md`, seguindo o mesmo formato cronológico já iniciado.
+Este projeto **não altera** skills nem documentação. Quando notar skill com
+comportamento errado, norma referenciada desatualizada (ex.: nova redação do
+Regimento Interno, nova Portaria substituindo a nº 271/2013) ou melhoria
+desejada, acrescente uma entrada em
+`_acervo-escritorio-virtual/manutencao/PENDENCIAS.md` com data, skill ou
+documento afetado, o que aconteceu e o processo SEI de origem (sem dados
+pessoais). A correção é feita no fluxo de desenvolvimento, que depois
+reinstala as skills e republica a referência.
 
-Desde 05/08/2026, todo produto de trabalho gerado por skill para um processo
-SEI específico (`NT_ESTADO.md`, achados, capítulos em rascunho) é salvo em
-`local/analyses/SEI_[processo]_[apelido]/`, e não na raiz do projeto (ver
-Seção 3). As 7 skills da suíte `cgov-nt` foram reescritas e reinstaladas em
-05/08/2026 para já embutir essa convenção — nenhum redirecionamento manual é
-mais necessário (ver `docs/governance/decision-log.md`, Seção 13).
+Todo produto de trabalho gerado por skill para um processo SEI específico
+(`NT_ESTADO.md`, achados, capítulos em rascunho) é salvo em
+`_acervo-escritorio-virtual/analyses/SEI_[processo]_[apelido]/` (o
+`local/analyses/` das skills; ver Seção 3).

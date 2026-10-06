@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Edit(/local/analyses/**)",
+      "Edit(/local/normative-sources/**)",
+      "Edit(/local/acervo-drive/**)",
+      "Edit(/.env)"
+    ]
+  },
+  "skillOverrides": {
+    "cgov-air-arr": "user-invocable-only",
+    "cgov-cadeia-valor": "user-invocable-only",
+    "cgov-gestao-riscos": "user-invocable-only",
+    "cgov-nt-01-triagem": "user-invocable-only",
+    "cgov-nt-02-instrucao": "user-invocable-only",
+    "cgov-nt-03-introducao": "user-invocable-only",
+    "cgov-nt-04-diagnostico": "user-invocable-only",
+    "cgov-nt-05-propostas": "user-invocable-only",
+    "cgov-nt-06-quesitos-pfe": "user-invocable-only",
+    "cgov-nt-07-conclusao": "user-invocable-only",
+    "cgov-pgr": "user-invocable-only",
+    "cgov-qcf": "user-invocable-only",
+    "cgov-regimento-interno": "user-invocable-only",
+    "cgov-transcrever-normativos": "user-invocable-only"
+  }
+}

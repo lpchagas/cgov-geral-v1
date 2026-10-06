@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Cria ou atualiza os links local/normative-sources e local/acervo-drive
+# Cria ou atualiza os links local/normative-sources, local/acervo-drive e
+# local/analyses
 # a partir das variáveis definidas em .env (modelo: .env.example).
 # Uso: bash scripts/link-acervo.sh
 set -euo pipefail
@@ -24,3 +25,4 @@ vincular() {  # vincular <variável> <link>
 mkdir -p local
 vincular CGOV_NORMATIVE_SOURCES local/normative-sources
 vincular CGOV_ACERVO_DRIVE local/acervo-drive
+vincular CGOV_ANALYSES local/analyses
